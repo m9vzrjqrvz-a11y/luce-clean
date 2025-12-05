@@ -146,3 +146,48 @@ footer {
     font-size: 14px;
     margin-top: 40px;
 }
+/* ===========================
+   TABLE RESPONSIVE (料金表)
+=========================== */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed;  /* 列幅を均等に */
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    word-wrap: break-word; /* 長文がはみ出さない */
+    font-size: 15px;
+}
+
+/* スマホでは縦並びにして見やすく */
+@media (max-width: 600px) {
+    .price-table thead {
+        display: none; /* 見出しを消す */
+    }
+
+    .price-table tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+    .price-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 5px;
+        font-size: 15px;
+    }
+
+    .price-table td::before {
+        content: attr(data-label); /* 見出しを疑似表示 */
+        font-weight: bold;
+        margin-right: 10px;
+        color: #555;
+    }
+}
