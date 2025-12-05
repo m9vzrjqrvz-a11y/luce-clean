@@ -1,54 +1,119 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会社概要｜株式会社Luce</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要 | 株式会社Luce</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .company-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fafafa;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .company-table th,
+        .company-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .company-table th {
+            background: #4a8ef0;
+            color: #fff;
+            width: 30%;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-  <h1>株式会社Luce</h1>
-  <nav>
-    <a href="index.html">ホーム</a>
-    <a href="service.html">サービス</a>
-    <a href="price.html">料金</a>
-    <a href="recruit.html">採用情報</a>
-    <a href="about.html">会社概要</a>
-    <a href="contact.html">お問い合わせ</a>
-  </nav>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Luceロゴ">
+        </a>
+        <nav class="global-nav">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="service.html">サービス</a></li>
+                <li><a href="price.html">料金</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a class="active" href="about.html">会社概要</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<section class="page-title">
-  <h2>会社概要</h2>
-  <p>地域に根ざした清掃サービスを提供し、快適な環境づくりに貢献します。</p>
-</section>
+<main>
 
-<section>
-  <div class="card">
-    <h3>会社情報</h3>
-    <p>
-      <strong>会社名：</strong>株式会社Luce<br>
-      <strong>代表者：</strong>衣笠 愛香<br>
-      <strong>所在地：</strong>大阪府大阪市下寺3-10-15<br>
-      <strong>電話番号：</strong>06-6978-8089<br>
-      <strong>営業時間：</strong>10:00〜17:00<br>
-      <strong>事業内容：</strong>清掃業・ビルメンテナンス<br>
-      <strong>設立日：</strong>11月1日<br>
-      <strong>従業員数：</strong>50名
-    </p>
-  </div>
-</section>
+    <section class="about-section">
+        <h2>会社概要</h2>
 
-<section>
-  <p>清掃に関するご相談は、どんな些細なことでもお気軽にお問い合わせください。</p>
-  <a class="btn" href="contact.html">お問い合わせはこちら</a>
-</section>
+        <p>
+            株式会社Luceは、大阪市を中心にマンション清掃・日常清掃・医院清掃・ホテル清掃など
+            多様な清掃サービスを提供しております。<br>
+            丁寧で高品質な清掃を徹底し、お客様の環境を常に清潔で快適な状態に保ちます。
+        </p>
+
+        <table class="company-table">
+            <tr>
+                <th>会社名</th>
+                <td>株式会社Luce</td>
+            </tr>
+            <tr>
+                <th>所在地</th>
+                <td>大阪府（※実在住所は必要に応じて追記）</td>
+            </tr>
+            <tr>
+                <th>代表者</th>
+                <td>―――</td>
+            </tr>
+            <tr>
+                <th>事業内容</th>
+                <td>
+                    ・日常清掃<br>
+                    ・マンション共用部清掃<br>
+                    ・商業施設・病院清掃<br>
+                    ・ホテル客室清掃
+                </td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>―――</td>
+            </tr>
+            <tr>
+                <th>メール</th>
+                <td>―――</td>
+            </tr>
+        </table>
+
+        <p style="margin-top:20px;">
+            清掃や管理に関するご相談など、まずはお気軽にお問い合わせください。
+        </p>
+
+    </section>
+
+</main>
 
 <footer>
-  <p>© 2025 株式会社Luce</p>
+    <p>© 2025 株式会社Luce</p>
 </footer>
 
 </body>
