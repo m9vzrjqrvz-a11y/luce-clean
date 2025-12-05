@@ -85,3 +85,44 @@ footer {
     border-top: 1px solid #ddd;
     margin-top: 50px;
 }
+/* 料金ページ */
+.price-table {
+    margin-top: 30px;
+}
+
+.price-block {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: #fafafa;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.price-left {
+    font-weight: bold;
+}
+
+.price-right {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.bottom-note {
+    font-size: 14px;
+    color: #444;
+    margin-top: 20px;
+}
