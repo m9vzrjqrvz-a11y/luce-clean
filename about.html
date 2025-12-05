@@ -3,42 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会社概要 | 株式会社Luce</title>
+    <title>会社概要｜株式会社Luce</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .about-section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        h2 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        p {
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        .company-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background: #fafafa;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .company-table th,
-        .company-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #ddd;
-        }
-        .company-table th {
-            background: #4a8ef0;
-            color: #fff;
-            width: 30%;
-        }
-    </style>
 </head>
 
 <body>
@@ -46,32 +12,32 @@
 <header class="site-header">
     <div class="container header-inner">
         <a href="index.html" class="brand">
-            <img src="22881554-1D14-4B53-9564-FB3A4DC5D36C.png" alt="Luceロゴ">
+            <img src="22881554-1D14-4B53-9564-FB3A4DC5D36C.png" alt="Luceロゴ" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-name">株式会社Luce</span>
+                <span class="brand-tagline">日常清掃・マンション・商業施設・ホテル清掃</span>
+            </div>
         </a>
+
         <nav class="global-nav">
             <ul>
                 <li><a href="index.html">ホーム</a></li>
                 <li><a href="service.html">サービス</a></li>
                 <li><a href="price.html">料金</a></li>
+                <li><a href="about.html" class="active">会社概要</a></li>
                 <li><a href="recruit.html">採用情報</a></li>
-                <li><a class="active" href="about.html">会社概要</a></li>
                 <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<main>
+<main class="container">
 
-    <section class="about-section">
-        <h2>会社概要</h2>
+    <h1 class="page-title">会社概要</h1>
 
-        <p>
-            株式会社Luceは、大阪市を中心にマンション清掃・日常清掃・医院清掃・ホテル清掃など
-            多様な清掃サービスを提供しております。<br>
-            丁寧で高品質な清掃を徹底し、お客様の環境を常に清潔で快適な状態に保ちます。
-        </p>
-
+    <section class="company-section">
+        <h2>企業情報</h2>
         <table class="company-table">
             <tr>
                 <th>会社名</th>
@@ -79,40 +45,38 @@
             </tr>
             <tr>
                 <th>所在地</th>
-                <td>大阪府（※実在住所は必要に応じて追記）</td>
-            </tr>
-            <tr>
-                <th>代表者</th>
-                <td>―――</td>
+                <td>大阪府（詳細住所を後で入力可）</td>
             </tr>
             <tr>
                 <th>事業内容</th>
-                <td>
-                    ・日常清掃<br>
-                    ・マンション共用部清掃<br>
-                    ・商業施設・病院清掃<br>
-                    ・ホテル客室清掃
-                </td>
+                <td>日常清掃 / マンション清掃 / 商業施設清掃 / 病院清掃 / ホテル清掃</td>
             </tr>
             <tr>
-                <th>電話番号</th>
-                <td>―――</td>
+                <th>代表者</th>
+                <td>（代表者名を入力）</td>
             </tr>
             <tr>
-                <th>メール</th>
-                <td>―――</td>
+                <th>設立</th>
+                <td>2025年 設立</td>
+            </tr>
+            <tr>
+                <th>連絡先</th>
+                <td>（電話番号 / メールアドレスなど）</td>
             </tr>
         </table>
+    </section>
 
-        <p style="margin-top:20px;">
-            清掃や管理に関するご相談など、まずはお気軽にお問い合わせください。
+    <section class="company-section">
+        <h2>理念</h2>
+        <p>
+            株式会社Luceは、清掃を通じて「より快適で安全な空間」を提供することを使命としています。  
+            お客様の大切な施設を、いつでも清潔で心地よい状態に保つことをお約束します。
         </p>
-
     </section>
 
 </main>
 
-<footer>
+<footer class="site-footer">
     <p>© 2025 株式会社Luce</p>
 </footer>
 
