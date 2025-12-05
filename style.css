@@ -1,164 +1,83 @@
-/* =====================
-   ベース設定
-===================== */
+/* 全体リセット */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-        "Segoe UI", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     color: #333;
-    line-height: 1.7;
-    background-color: #fff;
+    line-height: 1.6;
 }
 
-/* リンク */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* =====================
-   ヘッダー
-===================== */
+/* ヘッダー */
 header {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 10px 16px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #fff;
 }
 
-/* ロゴを小さめに */
 header .logo img {
-    height: 56px;   /* ←大きさはここで調整できる */
+    height: 56px;
     width: auto;
 }
 
 /* ナビゲーション */
-header nav {
-    display: flex;
-    gap: 16px;
-    font-size: 14px;
-}
-
-header nav a {
-    color: #333;
-    font-weight: 500;
-}
-
-header nav a:hover {
-    color: #007bff;
+nav a {
+    margin-left: 15px;
     text-decoration: none;
+    color: #333;
+    font-size: 16px;
 }
 
-/* =====================
-   ヒーローエリア
-===================== */
+nav a:hover {
+    color: #42a1ff;
+}
+
+/* ヒーロー画像 */
 .hero {
     position: relative;
-    margin-top: 8px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .hero img {
     width: 100%;
-    max-height: 480px;
+    height: auto;
     display: block;
-    object-fit: cover;
 }
 
-/* 「日常清掃」のタイトル */
 .hero-title {
     position: absolute;
-    bottom: 24px;
-    left: 24px;
-    font-size: 32px;
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    bottom: 20px;
+    left: 20px;
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 
-/* =====================
-   コンテンツ共通
-===================== */
+/* コンテンツ */
 section {
-    max-width: 960px;
-    margin: 32px auto;
-    padding: 0 16px;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.lead {
+/* 見出し */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* フッター */
+footer {
     text-align: center;
-}
-
-.lead h2 {
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
-.lead p {
-    margin-bottom: 16px;
-}
-
-/* ボタン */
-.btn {
-    display: inline-block;
-    padding: 10px 24px;
-    background-color: #007bff;
-    color: #ffffff;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.btn:hover {
-    background-color: #005dc0;
-}
-
-/* About セクション */
-.about h2 {
-    font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.about p + p {
-    margin-top: 8px;
-}
-
-/* =====================
-   レスポンシブ（スマホ）
-===================== */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    header .logo img {
-        height: 48px;
-    }
-
-    header nav {
-        flex-wrap: wrap;
-        gap: 12px;
-        font-size: 13px;
-    }
-
-    .hero-title {
-        font-size: 26px;
-        bottom: 18px;
-        left: 16px;
-    }
-
-    section {
-        margin: 24px auto;
-    }
+    padding: 15px;
+    background: #f4f4f4;
+    font-size: 14px;
+    margin-top: 40px;
 }
