@@ -1,146 +1,164 @@
-/* =========================
-   RESET
-========================= */
-body, h1, h2, h3, p, ul {
+/* =====================
+   ベース設定
+===================== */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-ul { list-style: none; }
-a { text-decoration: none; color: inherit; }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        "Segoe UI", sans-serif;
     color: #333;
-    background: #fff;
+    line-height: 1.7;
+    background-color: #fff;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* リンク */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   ヘッダー
+===================== */
 header {
-    width: 100%;
-    padding: 10px 15px;
-    background: #fff;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 10px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
-header img.logo {
-    height: 48px;       /* ← ロゴ大きさ調整済み */
+/* ロゴを小さめに */
+header .logo img {
+    height: 56px;   /* ←大きさはここで調整できる */
     width: auto;
 }
 
-/* ナビメニュー */
-nav ul {
+/* ナビゲーション */
+header nav {
     display: flex;
-    gap: 15px;
-}
-nav ul li a {
+    gap: 16px;
     font-size: 14px;
+}
+
+header nav a {
     color: #333;
+    font-weight: 500;
 }
 
-/* スマホ用メニュー（ハンバーガー） */
-.menu-btn {
-    display: none;
+header nav a:hover {
+    color: #007bff;
+    text-decoration: none;
 }
 
-/* =========================
-   HERO IMAGE（トップ画像）
-========================= */
+/* =====================
+   ヒーローエリア
+===================== */
 .hero {
     position: relative;
-    width: 100%;
-    height: 55vh; /* スマホでちょうど良い高さ */
-    overflow: hidden;
+    margin-top: 8px;
 }
 
 .hero img {
     width: 100%;
-    height: 100%;
+    max-height: 480px;
+    display: block;
     object-fit: cover;
 }
 
+/* 「日常清掃」のタイトル */
 .hero-title {
     position: absolute;
-    bottom: 12%;
-    left: 5%;
-    color: #fff;
+    bottom: 24px;
+    left: 24px;
     font-size: 32px;
     font-weight: 700;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
-.hero-sub {
-    position: absolute;
-    bottom: 6%;
-    left: 5%;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.6);
-}
-
-/* =========================
-   BUTTON
-========================= */
-.btn-primary {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #007bff;
-    color: #fff;
-    border-radius: 6px;
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-/* =========================
-   SECTION
-========================= */
+/* =====================
+   コンテンツ共通
+===================== */
 section {
-    padding: 40px 16px;
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 0 16px;
 }
 
-h2 {
-    font-size: 24px;
+.lead {
+    text-align: center;
+}
+
+.lead h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.lead p {
     margin-bottom: 16px;
-    font-weight: 700;
 }
 
-p {
-    margin-bottom: 15px;
-    line-height: 1.7;
+/* ボタン */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
+.btn:hover {
+    background-color: #005dc0;
+}
+
+/* About セクション */
+.about h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.about p + p {
+    margin-top: 8px;
+}
+
+/* =====================
+   レスポンシブ（スマホ）
+===================== */
+@media (max-width: 600px) {
+    header {
         flex-direction: column;
-        gap: 20px;
-        background: #fff;
-        padding: 20px;
-        position: absolute;
-        right: 10px;
-        top: 60px;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        align-items: flex-start;
+        gap: 8px;
     }
 
-    .menu-btn {
-        display: block;
+    header .logo img {
+        height: 48px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    .hero-title {
         font-size: 26px;
-        cursor: pointer;
+        bottom: 18px;
+        left: 16px;
     }
 
-    .menu-open nav ul {
-        display: flex;
+    section {
+        margin: 24px auto;
     }
 }
