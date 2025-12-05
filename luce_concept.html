@@ -150,33 +150,19 @@
       text-align: center;
     }
 
-    .flow-grid {
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .flow-item {
-      background: #fff;
-      border-radius: 16px;
-      padding: 12px 12px 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-      box-sizing: border-box;
-      text-align: center;
+    .flow-steps {
+      margin-top: 18px;
       font-size: 13px;
+      text-align: left;
     }
 
-    .flow-item-title {
+    .flow-steps dt {
       font-weight: 700;
-      margin-top: 10px;
-      margin-bottom: 4px;
-      font-size: 14px;
+      margin-top: 8px;
     }
 
-    .flow-item img {
-      border-radius: 12px;
-      margin: 0 auto;
+    .flow-steps dd {
+      margin: 0 0 4px 0;
     }
 
     /* スマホ向け */
@@ -187,9 +173,6 @@
       .slide-title {
         font-size: 20px;
       }
-      .flow-grid {
-        grid-template-columns: 1fr 1fr;
-      }
     }
 
     @media (max-width: 480px) {
@@ -198,13 +181,6 @@
       }
       .slide-title {
         font-size: 18px;
-      }
-      .flow-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-      .flow-item {
-        padding: 10px;
       }
     }
 
@@ -245,8 +221,8 @@
   <!-- ヘッダー -->
   <header class="site-header">
     <div class="site-logo">
-      <!-- ロゴ差し替え：src を Luce のロゴに -->
-      <img src="images/luce-logo.png" alt="清掃サービスLuce">
+      <!-- ロゴ画像は好きなのに差し替えてね -->
+      <img src="luce-logo.png" alt="清掃サービスLuce">
       <span>Luce Cleaning</span>
     </div>
     <div class="menu-button">
@@ -276,17 +252,18 @@
           </p>
         </div>
         <div class="slide-image">
-          <!-- 好きな写真に変更 -->
-          <img src="images/slide01.jpg" alt="快適な空間をつくる清掃">
+          <!-- ヒーロー画像：必要なら他のに変えてOK -->
+          <img src="IMG_8618.jpeg" alt="快適な空間をつくる清掃">
         </div>
       </div>
     </section>
 
-    <!-- スライド2：ワンランク上のサービス -->
+    <!-- スライド2：ワンランク上のサービス（床洗浄の機械） -->
     <section class="slide slide--blue">
       <div class="slide-inner slide-layout">
         <div class="slide-image">
-          <img src="images/slide02.jpg" alt="床の清掃機械">
+          <!-- フロアポリッシャーの写真 -->
+          <img src="IMG_8618.jpeg" alt="床の清掃機械">
         </div>
         <div class="slide-text-block">
           <h2 class="slide-title">
@@ -305,7 +282,7 @@
       </div>
     </section>
 
-    <!-- スライド3：定期研修・スタッフ -->
+    <!-- スライド3：定期研修・スタッフ（玄関タイル清掃） -->
     <section class="slide slide--mint">
       <div class="slide-inner slide-layout">
         <div class="slide-text-block">
@@ -323,12 +300,13 @@
           </p>
         </div>
         <div class="slide-image">
-          <img src="images/slide03.jpg" alt="スタッフ研修のイメージ">
+          <!-- 玄関タイル掃除の写真 -->
+          <img src="IMG_8619.jpeg" alt="タイル清掃の様子">
         </div>
       </div>
     </section>
 
-    <!-- スライド4：ご依頼からの流れ -->
+    <!-- スライド4：ご依頼の流れ（4コマ画像＋テキスト） -->
     <section class="slide slide--white">
       <div class="slide-inner">
         <div class="flow-title">
@@ -342,31 +320,25 @@
           </p>
         </div>
 
-        <div class="flow-grid">
-          <article class="flow-item">
-            <img src="images/flow01.jpg" alt="お問い合わせ">
-            <h3 class="flow-item-title">① お問い合わせ</h3>
-            <p>お電話・メール・LINEからお気軽にご相談ください。簡単な内容をヒアリングします。</p>
-          </article>
-
-          <article class="flow-item">
-            <img src="images/flow02.jpg" alt="お打ち合わせ・お見積り">
-            <h3 class="flow-item-title">② お打ち合わせ・お見積り</h3>
-            <p>現地確認やご希望をお伺いし、最適なプランとお見積りをご提案します。</p>
-          </article>
-
-          <article class="flow-item">
-            <img src="images/flow03.jpg" alt="清掃作業">
-            <h3 class="flow-item-title">③ 清掃作業</h3>
-            <p>プロのスタッフが丁寧に清掃。気になる箇所があればその場でお申し付けください。</p>
-          </article>
-
-          <article class="flow-item">
-            <img src="images/flow04.jpg" alt="ご確認・お引き渡し">
-            <h3 class="flow-item-title">④ ご確認・お引き渡し</h3>
-            <p>仕上がりをご確認いただき、問題がなければお引き渡し完了となります。</p>
-          </article>
+        <!-- waveのサイトと同じ4マス画像 -->
+        <div style="margin-top:24px;">
+          <img src="IMG_8620.jpeg" alt="ご依頼の流れ：お問い合わせ〜お引き渡し">
         </div>
+
+        <!-- 4ステップのテキストだけ下に -->
+        <dl class="flow-steps">
+          <dt>① お問い合わせ</dt>
+          <dd>お電話・メール・LINEからお気軽にご相談ください。簡単な内容をヒアリングします。</dd>
+
+          <dt>② お打ち合わせ・お見積り</dt>
+          <dd>現地確認やご希望をお伺いし、最適なプランとお見積りをご提案します。</dd>
+
+          <dt>③ 清掃作業</dt>
+          <dd>プロのスタッフが丁寧に清掃。気になる箇所があればその場でお申し付けください。</dd>
+
+          <dt>④ ご確認・お引き渡し</dt>
+          <dd>仕上がりをご確認いただき、問題がなければお引き渡し完了となります。</dd>
+        </dl>
       </div>
     </section>
 
