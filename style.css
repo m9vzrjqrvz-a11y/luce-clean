@@ -1,1 +1,132 @@
+/* ============================
+   全体デザイン
+============================ */
+body {
+  font-family: "Arial", "Hiragino Kaku Gothic ProN", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7faf7;
+  color: #333;
+}
 
+/* ============================
+   ヘッダー
+============================ */
+header {
+  background: #4CAF50;
+  padding: 12px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   TOPヒーロー画像
+============================ */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200") center/cover;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #FFEB3B;
+  color: #333;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* ============================
+   セクション共通
+============================ */
+section {
+  padding: 50px 20px;
+}
+
+.page-title h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* ============================
+   カード
+============================ */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* ============================
+   フッター
+============================ */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #4CAF50;
+  color: white;
+  font-size: 13px;
+}
+
+
+/* ============================
+   スマホ最適化
+============================ */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav a {
+    margin: 8px;
+    display: inline-block;
+  }
+  .hero h2 {
+    font-size: 22px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
