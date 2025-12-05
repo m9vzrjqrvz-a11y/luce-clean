@@ -215,3 +215,80 @@ footer {
         max-height: 240px;  /* ← スマホ用にさらに小さく */
     }
 }
+/* ============================
+   ① セクションの下に薄い緑ライン
+============================ */
+section {
+    border-bottom: 1px solid #e0f5f2; /* 薄い緑ライン */
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+}
+
+/* ============================
+   ② h1・h2 の左へアクセント緑バー
+============================ */
+h1, h2 {
+    position: relative;
+    padding-left: 12px;
+}
+
+h1::before, h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #00b1b3;
+    border-radius: 4px;
+}
+
+/* ============================
+   ③ h3 の下に薄い緑ライン
+============================ */
+h3 {
+    position: relative;
+    padding-bottom: 6px;
+}
+
+h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #c9f1ec;
+    border-radius: 4px;
+}
+
+/* ============================
+   ④ CTAやボックス風の背景に使える
+      → HTMLを変えず「見た目だけ」優しくする
+============================ */
+div[style*="background:#e9f8f7"] {
+    background: linear-gradient(135deg, #e9f8f7, #f6fffe) !important;
+    border-left: 6px solid #00b1b3 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* ============================
+   ⑤ ボタンのデザインを自動強化
+      → HTMLの a タグが青緑ボタン風になる
+============================ */
+a[href*="contact"] {
+    background: #00a3a5;
+    color: #fff !important;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.25s;
+}
+
+a[href*="contact"]:hover {
+    background: #009295;
+    transform: translateY(-2px);
+}
