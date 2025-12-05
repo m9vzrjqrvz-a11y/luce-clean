@@ -61,27 +61,14 @@ nav a:hover {
     bottom: 25px;
     left: 20px;
     color: #fff;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     text-shadow: 0 0 8px rgba(0,0,0,0.6);
 }
 
-.home-title {
-    text-align: center;
-    margin: 30px 0 10px 0;
-}
-
-.home-title img {
-    width: 180px;
-    height: auto;
-}
-
-.catch-copy {
-    text-align: center;
-    font-size: 20px;
-    color: #42a1ff;
-    font-weight: 600;
-    margin-top: 10px;
+/* ホーム以外ではヒーロー非表示 */
+body:not(.home) .hero {
+    display: none;
 }
 
 /* ===========================
@@ -93,26 +80,60 @@ section {
     margin: auto;
 }
 
-h2 {
+h1 {
     font-size: 30px;
     margin-bottom: 20px;
-    font-weight: 700;
 }
 
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 22px;
+    margin: 25px 0 10px;
+}
+
+/* サービス画像など */
 .service-photo {
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin: 20px 0 10px;
 }
 
-.service-title-img {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    font-size: 34px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+/* リスト */
+ul {
+    margin-left: 1.2em;
+    margin-top: 8px;
+}
+
+ul li {
+    margin-bottom: 4px;
+}
+
+/* テーブル（料金） */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.price-table th {
+    background: #f5f5f5;
+    text-align: left;
+}
+
+/* recruit など小見出し */
+.small-title {
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 /* ===========================
@@ -124,13 +145,4 @@ footer {
     background: #f4f4f4;
     font-size: 14px;
     margin-top: 40px;
-}
-
-/* ===========================
-   HOME ONLY
-=========================== */
-body:not(.home) .hero,
-body:not(.home) .home-title,
-body:not(.home) .catch-copy {
-    display: none;
 }
