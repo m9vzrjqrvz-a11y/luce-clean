@@ -6,53 +6,39 @@ body {
     color: #333;
 }
 
-/* ==========================
-    固定ヘッダー（スマホ対応）
-========================== */
-.site-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #fff;
+/* ヘッダー */
+header {
+    padding: 8px 20px;
     border-bottom: 1px solid #ddd;
-    z-index: 1000;
 }
 
 .header-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 8px 15px;
+    justify-content: space-between;
 }
 
-/* ロゴ */
-.brand img {
-    height: 42px;
-    width: auto;
-    display: block;
+.logo {
+    height: 50px;
 }
 
-/* ナビゲーション */
-.nav-list {
+/* ナビ */
+nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
-    padding: 0;
+    gap: 16px;
     margin: 0;
-    flex-wrap: wrap;
+    padding: 0;
 }
 
-.nav-list a {
+nav a {
     text-decoration: none;
     color: #333;
     font-size: 15px;
 }
 
-/* ==========================
-        ヒーロー画像
-========================== */
+/* 画像 */
 .hero {
-    margin-top: 70px; /* ←固定ヘッダー分の余白 */
     position: relative;
 }
 
@@ -64,104 +50,38 @@ body {
 
 .hero-title {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-size: 24px;
-    color: #fff;
+    bottom: 20px;
+    left: 20px;
+    font-size: 22px;
+    color: white;
     font-weight: bold;
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 6px rgba(0,0,0,0.7);
 }
 
-/* ==========================
-        ページ共通幅
-========================== */
+/* 共通コンテナ */
 .page-container {
-    padding: 20px;
     max-width: 900px;
     margin: auto;
-}
-
-/* ==========================
-        サービス画像
-========================== */
-.service-img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin: 25px 0 10px 0;
-    display: block;
-}
-
-/* セクション */
-.service-block {
-    margin-bottom: 50px;
-}
-
-.service-title {
-    font-size: 26px;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-/* ==========================
-        料金表（見やすい版）
-========================== */
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 25px;
-    font-size: 16px;
-}
-
-.price-table th,
-.price-table td {
-    border: 1px solid #ccc;
-    padding: 12px;
-}
-
-.price-table th {
-    background: #f8f8f8;
-    font-weight: bold;
-}
-
-/* ==========================
-        フッター
-========================== */
-footer {
     padding: 20px;
+}
+
+/* 見出し */
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+/* フッター */
+footer {
     text-align: center;
-    font-size: 14px;
+    padding: 25px 0;
     color: #666;
     border-top: 1px solid #ddd;
     margin-top: 50px;
-}
-
-/* ==========================
-        スマホ最適化
-========================== */
-@media (max-width: 600px) {
-
-    .hero-title {
-        font-size: 20px;
-        bottom: 10px;
-        left: 10px;
-    }
-
-    .nav-list {
-        gap: 10px;
-    }
-
-    .nav-list a {
-        font-size: 14px;
-    }
-
-    .service-title {
-        font-size: 22px;
-    }
-
-    .price-table th,
-    .price-table td {
-        font-size: 14px;
-        padding: 10px;
-    }
 }
