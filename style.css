@@ -16,147 +16,124 @@ body {
 }
 
 /* ===========================
-   HEADER（全ページ統一デザイン）
+   HEADER（完全復元＋安定）
 =========================== */
 header {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 10px 16px;
+    width: 100%;
     background: #ffffff;
     border-bottom: 1px solid #e5e5e5;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-header .logo img {
-    height: 42px; /* ← 全ページ統一サイズ */
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ロゴ統一サイズ */
+.logo {
+    height: 48px;
     width: auto;
+    display: block;
 }
 
 /* ナビゲーション */
-nav {
+nav ul {
+    list-style: none;
     display: flex;
-    gap: 16px;
-    flex-wrap: nowrap;
+    gap: 18px;
+    align-items: center;
 }
 
-nav a {
+nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 14px;
-    white-space: nowrap;
-    padding: 2px 3px;
+    font-size: 15px;
+    padding: 3px 4px;
     border-radius: 3px;
+    transition: 0.2s;
 }
 
-nav a:hover {
-    color: #00a3a5; /* 緑×水色のブランドカラー */
+nav ul li a:hover {
+    color: #00a3a5; /* Luceイメージの緑×水色 */
 }
 
-/* スマホ向け */
+/* スマホレイアウト */
 @media (max-width: 600px) {
-    header {
-        flex-wrap: wrap;
-        gap: 6px 10px;
-        padding: 12px;
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 
-    nav {
+    nav ul {
         flex-wrap: wrap;
         gap: 10px 14px;
     }
 
-    nav a {
+    nav ul li a {
         font-size: 13px;
     }
 }
 
 /* ===========================
-   HERO（トップ画像セクション）
+   HERO（トップ）
 =========================== */
 .hero {
     position: relative;
     width: 100%;
-    overflow: hidden;
 }
 
-.hero img {
+.hero-img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.hero-text {
+.hero-title {
     position: absolute;
-    bottom: 20px;
+    bottom: 18px;
     left: 16px;
     right: 16px;
     color: #fff;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
 @media (max-width: 600px) {
-    .hero-text {
+    .hero-title {
         font-size: 18px;
-        bottom: 14px;
+        bottom: 12px;
     }
 }
 
 /* ===========================
-   SECTION 共通
+   ページ共通
 =========================== */
+.page-container,
 section {
-    padding: 32px 16px;
-    max-width: 1000px;
+    max-width: 950px;
     margin: 0 auto;
+    padding: 32px 16px;
 }
 
-h1 {
-    font-size: 26px;
+/* タイトル */
+h2 {
+    font-size: 24px;
     margin-bottom: 16px;
+    padding-bottom: 6px;
     border-left: 6px solid #00b1b3;
     padding-left: 10px;
 }
 
-h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-    position: relative;
-}
-
-h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #00b1b3, #7ed4ff);
-    border-radius: 5px;
-}
-
 h3 {
     font-size: 18px;
-    margin: 18px 0 8px;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-/* ===========================
-   SERVICE 画像
-=========================== */
-.service-photo {
-    width: 100%;
-    border-radius: 10px;
-    margin: 18px 0 8px;
-    display: block;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-top: 20px;
+    margin-bottom: 8px;
 }
 
 /* ===========================
@@ -168,7 +145,18 @@ ul {
 }
 
 ul li {
-    margin-bottom: 4px;
+    margin-bottom: 5px;
+}
+
+/* ===========================
+   SERVICE 画像
+=========================== */
+.service-photo {
+    width: 100%;
+    border-radius: 10px;
+    margin: 18px 0 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* ===========================
@@ -185,16 +173,14 @@ ul li {
     border: 1px solid #ddd;
     padding: 10px;
     font-size: 14px;
-    vertical-align: top;
 }
 
 .price-table th {
     background: #f3fafc;
-    font-weight: 600;
     color: #008b8d;
 }
 
-/* スマホ：カード風テーブル */
+/* スマホ（カード型） */
 @media (max-width: 600px) {
     .price-table thead {
         display: none;
@@ -202,7 +188,7 @@ ul li {
 
     .price-table tr {
         display: block;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
         border: 1px solid #ddd;
     }
 
@@ -225,17 +211,9 @@ ul li {
 =========================== */
 footer {
     text-align: center;
-    padding: 14px;
+    padding: 20px;
     font-size: 13px;
     background: #f7f7f7;
-    margin-top: 32px;
+    margin-top: 40px;
     color: #555;
-}
-
-.map-wrap {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
