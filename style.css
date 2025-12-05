@@ -199,3 +199,19 @@ footer {
     font-size: 13px;
     color: #666;
 }
+/* サービス写真の共通スタイル */
+.service-photo {
+    width: 100%;
+    height: auto;
+    max-height: 320px;    /* ← 画像の最大高さを制限（好みで調整OK） */
+    object-fit: cover;    /* ← トリミングしながら綺麗にフィット */
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* スマホ時はさらに少し小さく */
+@media (max-width: 600px) {
+    .service-photo {
+        max-height: 240px;  /* ← スマホ用にさらに小さく */
+    }
+}
