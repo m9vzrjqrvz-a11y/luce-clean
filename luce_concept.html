@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>清掃サービスLuce｜コンセプト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* ベース */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "YuGothic", "Meiryo", sans-serif;
+      color: #333;
+      line-height: 1.8;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory; /* スライドっぽくする */
+      background: #f7fbff;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ヘッダー */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+    }
+
+    .site-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .menu-button {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .menu-lines {
+      width: 22px;
+      height: 2px;
+      background: #555;
+      position: relative;
+    }
+    .menu-lines::before,
+    .menu-lines::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #555;
+    }
+    .menu-lines::before { top: -6px; }
+    .menu-lines::after  { top:  6px; }
+
+    /* スライド共通 */
+    .slide {
+      scroll-snap-align: start;
+      min-height: 100vh;
+      padding: 90px 16px 80px; /* ヘッダー分 + 余白 */
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .slide-title {
+      font-size: 22px;
+      letter-spacing: 0.18em;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .slide-title span {
+      display: inline-block;
+    }
+
+    .slide-title-bar {
+      width: 120px;
+      height: 3px;
+      margin-top: 8px;
+      background: linear-gradient(90deg, #6bc7ff, #6ad2c9);
+      border-radius: 999px;
+    }
+
+    .slide-text {
+      font-size: 14px;
+      margin-top: 16px;
+    }
+
+    .slide-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    /* 画像角丸＆影 */
+    .slide-image img {
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* セクションごとの背景 */
+    .slide--white   { background: #ffffff; }
+    .slide--blue    { background: #f0f7ff; }
+    .slide--mint    { background: #f4fbf8; }
+
+    /* ご依頼の流れ */
+    .flow-title {
+      text-align: center;
+    }
+
+    .flow-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .flow-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 12px 12px 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .flow-item-title {
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .flow-item img {
+      border-radius: 12px;
+      margin: 0 auto;
+    }
+
+    /* スマホ向け */
+    @media (max-width: 768px) {
+      .slide-layout {
+        grid-template-columns: 1fr;
+      }
+      .slide-title {
+        font-size: 20px;
+      }
+      .flow-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide {
+        padding: 80px 14px 70px;
+      }
+      .slide-title {
+        font-size: 18px;
+      }
+      .flow-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .flow-item {
+        padding: 10px;
+      }
+    }
+
+    /* 下部の固定ボタン（電話・メール） */
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 56px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      background: #ffffff;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+      z-index: 9;
+    }
+
+    .bottom-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      gap: 6px;
+      border-right: 1px solid #eee;
+    }
+
+    .bottom-btn:last-child {
+      border-right: none;
+    }
+
+    .bottom-btn span.icon {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="site-logo">
+      <!-- ロゴ差し替え：src を Luce のロゴに -->
+      <img src="images/luce-logo.png" alt="清掃サービスLuce">
+      <span>Luce Cleaning</span>
+    </div>
+    <div class="menu-button">
+      <div class="menu-lines"></div>
+      <span>MENU</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- スライド1：コンセプト -->
+    <section class="slide slide--white">
+      <div class="slide-inner slide-layout">
+        <div class="slide-text-block">
+          <h2 class="slide-title">
+            <span>快適な空間を</span><br>
+            <span>つくるために</span>
+          </h2>
+          <div class="slide-title-bar"></div>
+          <p class="slide-text">
+            マンション・戸建て・店舗・オフィスなど、<br>
+            「また帰りたくなる・また来たくなる」空間づくりをお手伝いするのが
+            清掃サービスLuceです。<br><br>
+            日常清掃から定期清掃まで、お客様のライフスタイルや業種に合わせて
+            最適なプランをご提案。見えない部分こそ丁寧に、手を抜かない清掃で、
+            いつでも気持ちよく過ごせる空間をキープします。
+          </p>
+        </div>
+        <div class="slide-image">
+          <!-- 好きな写真に変更 -->
+          <img src="images/slide01.jpg" alt="快適な空間をつくる清掃">
+        </div>
+      </div>
+    </section>
+
+    <!-- スライド2：ワンランク上のサービス -->
+    <section class="slide slide--blue">
+      <div class="slide-inner slide-layout">
+        <div class="slide-image">
+          <img src="images/slide02.jpg" alt="床の清掃機械">
+        </div>
+        <div class="slide-text-block">
+          <h2 class="slide-title">
+            <span>ただキレイなだけじゃない、</span><br>
+            <span>ワンランク上のサービスを</span>
+          </h2>
+          <div class="slide-title-bar"></div>
+          <p class="slide-text">
+            清掃業者なら「汚れが落ちる」のは当たり前。<br>
+            Luceは、そこからもう一歩先の心地よさを目指しています。<br><br>
+            動線を考えた仕上がり・香り・照明とのバランスなど、
+            細かなところまでこだわった清掃で、
+            ご家族やお客様を気持ちよくお迎えできる空間をつくります。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- スライド3：定期研修・スタッフ -->
+    <section class="slide slide--mint">
+      <div class="slide-inner slide-layout">
+        <div class="slide-text-block">
+          <h2 class="slide-title">
+            <span>定期的な研修で</span><br>
+            <span>技術とホスピタリティを磨く</span>
+          </h2>
+          <div class="slide-title-bar"></div>
+          <p class="slide-text">
+            サービスの質を保つため、スタッフの技術研修・マナー研修を
+            定期的に行っています。<br><br>
+            「安心して任せられる」「またお願いしたい」と思っていただけるよう、
+            清掃技術だけでなく、挨拶・言葉づかい・身だしなみまで徹底。
+            小さな不安やご要望にも、柔軟にお応えいたします。
+          </p>
+        </div>
+        <div class="slide-image">
+          <img src="images/slide03.jpg" alt="スタッフ研修のイメージ">
+        </div>
+      </div>
+    </section>
+
+    <!-- スライド4：ご依頼からの流れ -->
+    <section class="slide slide--white">
+      <div class="slide-inner">
+        <div class="flow-title">
+          <h2 class="slide-title">
+            <span>ご依頼から作業完了までの流れ</span>
+          </h2>
+          <div class="slide-title-bar" style="margin-left:auto;margin-right:auto;"></div>
+          <p class="slide-text">
+            初めての方でも安心してご利用いただけるよう、<br>
+            Luceでは分かりやすい4ステップでご案内しています。
+          </p>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-item">
+            <img src="images/flow01.jpg" alt="お問い合わせ">
+            <h3 class="flow-item-title">① お問い合わせ</h3>
+            <p>お電話・メール・LINEからお気軽にご相談ください。簡単な内容をヒアリングします。</p>
+          </article>
+
+          <article class="flow-item">
+            <img src="images/flow02.jpg" alt="お打ち合わせ・お見積り">
+            <h3 class="flow-item-title">② お打ち合わせ・お見積り</h3>
+            <p>現地確認やご希望をお伺いし、最適なプランとお見積りをご提案します。</p>
+          </article>
+
+          <article class="flow-item">
+            <img src="images/flow03.jpg" alt="清掃作業">
+            <h3 class="flow-item-title">③ 清掃作業</h3>
+            <p>プロのスタッフが丁寧に清掃。気になる箇所があればその場でお申し付けください。</p>
+          </article>
+
+          <article class="flow-item">
+            <img src="images/flow04.jpg" alt="ご確認・お引き渡し">
+            <h3 class="flow-item-title">④ ご確認・お引き渡し</h3>
+            <p>仕上がりをご確認いただき、問題がなければお引き渡し完了となります。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 下部の電話・メールボタン（必要なければ削除OK） -->
+  <div class="bottom-bar">
+    <a href="tel:0120-000-000" class="bottom-btn">
+      <span class="icon">📞</span>
+      <span>お電話</span>
+    </a>
+    <a href="mailto:info@luce-cleaning.jp" class="bottom-btn">
+      <span class="icon">✉️</span>
+      <span>メール</span>
+    </a>
+  </div>
+
+</body>
+</html>
