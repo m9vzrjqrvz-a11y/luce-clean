@@ -300,3 +300,13 @@ header a[href*="contact"] {
     box-shadow: none !important;
     transform: none !important;
 }
+a[href*="contact"] {
+    background: #00a3a5;
+    color: #fff !important;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.25s;
+}
