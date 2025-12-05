@@ -8,7 +8,8 @@
 }
 
 body {
-    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont,
+        "Helvetica Neue", Arial, sans-serif;
     color: #333;
     line-height: 1.7;
     background-color: #fff;
@@ -42,7 +43,7 @@ nav a:hover {
     color: #2b8cff;
 }
 
-/* スマホでナビが詰まりすぎないよう調整 */
+/* スマホ用ヘッダー調整 */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
@@ -63,7 +64,7 @@ nav a:hover {
 }
 
 /* ===========================
-   HERO（ホームだけ）
+   HERO（トップページ）
 =========================== */
 .hero {
     position: relative;
