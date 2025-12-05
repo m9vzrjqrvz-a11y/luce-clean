@@ -10,11 +10,11 @@ body {
         BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     color: #333;
     line-height: 1.7;
-    background-color: #fff;
+    background: #fff;
 }
 
 /* =======================================
-   HEADER（完全安定版）
+   HEADER
 ======================================= */
 header {
     width: 100%;
@@ -23,22 +23,13 @@ header {
     border-bottom: 1px solid #e5e5e5;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 18px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    gap: 20px;
 }
 
 .logo {
-    height: 42px !important; 
+    height: 42px;
     width: auto;
-    display: block;
-}
-
-/* nav */
-nav {
-    flex: 1;
+    flex-shrink: 0;
 }
 
 nav ul {
@@ -48,16 +39,10 @@ nav ul {
     flex-wrap: wrap;
 }
 
-nav ul li {
-    list-style: none;
-}
-
 nav a {
     text-decoration: none;
     color: #333;
     font-size: 14px;
-    padding: 4px 6px;
-    border-radius: 3px;
     white-space: nowrap;
 }
 
@@ -69,20 +54,16 @@ nav a:hover {
 @media (max-width: 600px) {
     header {
         flex-wrap: wrap;
-        padding-bottom: 14px;
-    }
-    nav ul {
-        gap: 12px;
     }
 }
 
 /* =======================================
-   HERO
+   HERO（背景ロゴ完全排除版）
 ======================================= */
 .hero {
     position: relative;
     width: 100%;
-    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .hero-img {
@@ -109,107 +90,61 @@ nav a:hover {
 }
 
 /* =======================================
-   PAGE LAYOUT
+   PAGE BASE
 ======================================= */
 .page-container {
     max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 16px 60px;
-}
-
-h1 {
-    font-size: 26px;
-    margin-bottom: 16px;
+    margin: 32px auto;
+    padding: 0 16px;
 }
 
 h2 {
     font-size: 22px;
     margin-bottom: 12px;
-    position: relative;
-}
-
-h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #00b1b3, #7ed4ff);
-    border-radius: 5px;
-}
-
-h3 {
-    font-size: 18px;
-    margin: 20px 0 8px;
-}
-
-ul {
-    margin-left: 18px;
-    margin-bottom: 12px;
-}
-
-ul li {
-    margin-bottom: 4px;
+    font-weight: bold;
 }
 
 /* =======================================
-   TABLE（料金表完全復旧）
+   料金表（完全修正版）
 ======================================= */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background: #fff;
 }
 
 table th,
 table td {
     border: 1px solid #ccc;
     padding: 10px;
-    font-size: 14px;
-    vertical-align: top;
 }
 
 table th {
     background: #e9f9f9;
     color: #008b8d;
-    font-weight: 600;
 }
 
-/* スマホ（カード式） */
+/* スマホ版カード表示 */
 @media (max-width: 600px) {
     table thead {
         display: none;
     }
-
     table tr {
         display: block;
-        margin-bottom: 14px;
         border: 1px solid #ccc;
+        margin-bottom: 12px;
         padding: 10px;
     }
-
     table td {
         display: flex;
         padding: 6px 0;
     }
-
     table td::before {
         content: attr(data-label);
         font-weight: bold;
         width: 110px;
         color: #008b8d;
-        flex-shrink: 0;
     }
-}
-
-/* =======================================
-   IMAGE COMMON
-======================================= */
-img {
-    max-width: 100%;
-    height: auto;
 }
 
 /* =======================================
@@ -217,9 +152,9 @@ img {
 ======================================= */
 footer {
     text-align: center;
-    padding: 16px;
+    padding: 14px;
     background: #f5f5f5;
+    margin-top: 40px;
     font-size: 13px;
     color: #666;
-    margin-top: 40px;
 }
