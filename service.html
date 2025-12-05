@@ -1,56 +1,98 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <title>サービス内容｜株式会社Luce</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス内容 | 株式会社Luce</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .service-section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .service-section h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .service-section p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .service-img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>株式会社Luce</h1>
-  <nav>
-    <a href="index.html">ホーム</a>
-    <a href="service.html">サービス</a>
-    <a href="price.html">料金</a>
-    <a href="recruit.html">採用情報</a>
-    <a href="about.html">会社概要</a>
-    <a href="contact.html">お問い合わせ</a>
-  </nav>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Luceロゴ">
+        </a>
+        <nav class="global-nav">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="service.html" class="active">サービス</a></li>
+                <li><a href="price.html">料金</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a href="about.html">会社概要</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<section class="page-title">
-  <h2>サービス内容</h2>
-  <p>幅広い清掃サービスで、建物の環境を清潔・快適に保ちます。</p>
-</section>
+<main>
 
-<section>
-  <h3>日常清掃</h3>
-  <p>マンション・オフィス・店舗などの日常清掃を行います。共用部の美観維持に最適です。</p>
-  <img src="https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?w=900" width="100%" style="border-radius:10px;">
-</section>
+    <!-- 日常清掃 -->
+    <section class="service-section">
+        <h2>日常清掃</h2>
+        <p>
+            事務所・店舗・施設などの日常的な清掃を行います。  
+            毎日の清潔な環境づくりをサポートし、快適で安全な空間を維持します。
+        </p>
+        <img src="AF798775-C155-42FB-9D52-5B8174371A6B.png" class="service-img" alt="日常清掃">
+    </section>
 
-<section>
-  <h3>マンション清掃</h3>
-  <p>エントランス・廊下・階段・駐輪場など、マンションの共用部を専門スタッフが丁寧に清掃します。</p>
-  <img src="https://images.unsplash.com/photo-1560448075-bb4e2ea2ce1b?w=900" width="100%" style="border-radius:10px;">
-</section>
+    <!-- マンション清掃 -->
+    <section class="service-section">
+        <h2>マンション清掃</h2>
+        <p>
+            エントランス・廊下・階段・駐輪場など、マンション共用部の美観を保つ清掃を行います。  
+            居住者が快適に過ごせる空間を保ちます。
+        </p>
+        <img src="C0471227-800F-4684-B6C8-EFFB1C570C09.png" class="service-img" alt="マンション清掃">
+    </section>
 
-<section>
-  <h3>商業施設・病院清掃</h3>
-  <p>大型施設の高頻度清掃にも対応。衛生管理が必要な医療機関もお任せください。</p>
-  <img src="https://images.unsplash.com/photo-1581338834647-4c89bba1c6b2?w=900" width="100%" style="border-radius:10px;">
-</section>
+    <!-- 商業施設・病院清掃 -->
+    <section class="service-section">
+        <h2>商業施設・病院清掃</h2>
+        <p>
+            大型施設の高頻度清掃のほか、衛生管理が重要な医療機関にも対応しています。  
+            安心・安全を第一にした高品質なクリーニングを提供します。
+        </p>
+        <img src="63008742-28B1-4BE3-AEAB-FB553C419342.png" class="service-img" alt="商業施設・病院清掃">
+    </section>
 
-<section>
-  <h3>ホテル清掃</h3>
-  <p>客室清掃・ベッドメイク・アメニティ補充など、ホテル運営に欠かせない業務を一括対応。</p>
-  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900" width="100%" style="border-radius:10px;">
-</section>
+    <!-- ホテル清掃 -->
+    <section class="service-section">
+        <h2>ホテル清掃</h2>
+        <p>
+            客室清掃・ベッドメイク・備品補充など、ホテル運営に欠かせない清掃を一括対応。  
+            高品質でムラのない客室管理を行います。
+        </p>
+        <img src="926995C7-C5CC-4439-9A38-35C498DEAF23.png" class="service-img" alt="ホテル清掃">
+    </section>
+
+</main>
 
 <footer>
-  <p>© 2025 株式会社Luce</p>
+    <p>© 2025 株式会社Luce</p>
 </footer>
 
 </body>
