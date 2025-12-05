@@ -1,66 +1,66 @@
-/* ============================
-   基本設定
-============================ */
-body {
+/* =========================
+   RESET
+========================= */
+body, h1, h2, h3, p, ul {
     margin: 0;
-    font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+    padding: 0;
+}
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
     color: #333;
     background: #fff;
-    line-height: 1.7;
 }
 
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-/* ============================
-   ヘッダー
-============================ */
-.header {
+/* =========================
+   HEADER
+========================= */
+header {
+    width: 100%;
+    padding: 10px 15px;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 20px;
     border-bottom: 1px solid #eee;
-    background: #ffffff;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
-.logo {
-    height: 50px;
+header img.logo {
+    height: 48px;       /* ← ロゴ大きさ調整済み */
     width: auto;
 }
 
-/* ナビゲーション */
-.nav a {
-    margin-left: 14px;
-    font-size: 15px;
+/* ナビメニュー */
+nav ul {
+    display: flex;
+    gap: 15px;
+}
+nav ul li a {
+    font-size: 14px;
+    color: #333;
 }
 
-.nav a:hover {
-    opacity: 0.6;
+/* スマホ用メニュー（ハンバーガー） */
+.menu-btn {
+    display: none;
 }
 
-/* ============================
-   ヒーロー画像
-============================ */
+/* =========================
+   HERO IMAGE（トップ画像）
+========================= */
 .hero {
     position: relative;
     width: 100%;
-    height: 55vh;
+    height: 55vh; /* スマホでちょうど良い高さ */
     overflow: hidden;
-    background: #000;
 }
 
-.hero-img {
+.hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -68,108 +68,79 @@ img {
 
 .hero-title {
     position: absolute;
-    bottom: 25px;
-    left: 25px;
-    font-size: 32px;
-    font-weight: bold;
+    bottom: 12%;
+    left: 5%;
     color: #fff;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.6);
 }
 
-/* ============================
-   セクション
-============================ */
-section {
-    padding: 25px 20px;
-}
-
-.intro p,
-.company p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-/* ボタン */
-.btn {
-    display: inline-block;
-    background: #007bff;
-    color: #fff !important;
-    padding: 10px 22px;
-    border-radius: 6px;
-    margin-top: 10px;
-    font-size: 15px;
-}
-
-.btn:hover {
-    opacity: 0.8;
-}
-
-/* ============================
-   タイトル
-============================ */
-h1, h2, h3 {
-    margin: 0 0 12px 0;
+.hero-sub {
+    position: absolute;
+    bottom: 6%;
+    left: 5%;
+    color: #fff;
+    font-size: 18px;
     font-weight: 600;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* =========================
+   SECTION
+========================= */
+section {
+    padding: 40px 16px;
 }
 
 h2 {
     font-size: 24px;
-    border-left: 5px solid #4CAF50;
-    padding-left: 10px;
+    margin-bottom: 16px;
+    font-weight: 700;
 }
 
-/* ============================
-   サービス画像（service.html 用）
-============================ */
-.service-box {
-    margin-bottom: 35px;
+p {
+    margin-bottom: 15px;
+    line-height: 1.7;
 }
 
-.service-img {
-    width: 100%;
-    border-radius: 6px;
-    object-fit: cover;
-    height: 250px;
-}
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background: #fff;
+        padding: 20px;
+        position: absolute;
+        right: 10px;
+        top: 60px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-/* ============================
-   料金表（price.html 用）
-============================ */
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
+    .menu-btn {
+        display: block;
+        font-size: 26px;
+        cursor: pointer;
+    }
 
-.price-table th,
-.price-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-    font-size: 15px;
-}
-
-.price-table th {
-    background: #f5f5f5;
-}
-
-/* ============================
-   会社概要（about.html）
-============================ */
-.about-box {
-    background: #fafafa;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #eee;
-}
-
-/* ============================
-   フッター
-============================ */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #f7f7f7;
-    margin-top: 40px;
-    font-size: 14px;
+    .menu-open nav ul {
+        display: flex;
+    }
 }
