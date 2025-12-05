@@ -1,57 +1,119 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>料金案内｜株式会社Luce</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>料金案内 | 株式会社Luce</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .price-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        p, li {
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .price-box {
+            background: #f3f7ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 6px solid #4a8ef0;
+        }
+        .price-box h3 {
+            margin: 0 0 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-  <h1>株式会社Luce</h1>
-  <nav>
-    <a href="index.html">ホーム</a>
-    <a href="service.html">サービス</a>
-    <a href="price.html">料金</a>
-    <a href="recruit.html">採用情報</a>
-    <a href="about.html">会社概要</a>
-    <a href="contact.html">お問い合わせ</a>
-  </nav>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Luceロゴ">
+        </a>
+        <nav class="global-nav">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="service.html">サービス</a></li>
+                <li><a class="active" href="price.html">料金</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a href="about.html">会社概要</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<section class="page-title">
-  <h2>料金案内</h2>
-  <p>清掃内容・広さ・頻度により料金は変動いたします。<br>まずは目安としてご覧ください。</p>
-</section>
+<main>
 
-<section>
-  <div class="card">
-    <h3>日常清掃</h3>
-    <p><strong>1名 / 1時間：3,000円〜</strong></p>
-    <p>オフィス・マンション・店舗・施設の共用部に最適です。</p>
-  </div>
+    <section class="price-section">
+        <h2>料金案内</h2>
+        <p>株式会社Luceでは、お客様のご要望や現場の状況に合わせて柔軟に対応いたします。<br>
+        まずはお気軽にご相談ください。</p>
 
-  <div class="card">
-    <h3>ホテル客室清掃</h3>
-    <p><strong>1室：800円〜</strong></p>
-    <p>ベッドメイク・水回り清掃・アメニティ補充など、稼働状況に合わせて料金を調整します。</p>
-  </div>
+        <!-- 日常清掃 -->
+        <div class="price-box">
+            <h3>日常清掃</h3>
+            <p><strong>1時間：3,000円〜</strong></p>
+            <ul>
+                <li>事務所・店舗・施設の日常清掃</li>
+                <li>週1〜毎日まで柔軟に対応</li>
+                <li>ゴミ回収・床清掃・トイレ清掃など</li>
+            </ul>
+        </div>
 
-  <div class="card">
-    <h3>マンション・商業施設清掃</h3>
-    <p>建物の規模や清掃範囲に応じて個別にお見積りいたします。</p>
-  </div>
-</section>
+        <!-- マンション清掃 -->
+        <div class="price-box">
+            <h3>マンション清掃</h3>
+            <p><strong>1回：4,000円〜</strong></p>
+            <ul>
+                <li>エントランス・廊下・階段・駐輪場 清掃</li>
+                <li>共用部の美観維持に最適</li>
+                <li>週1・隔週・月1など柔軟にプラン選択可能</li>
+            </ul>
+        </div>
 
-<section>
-  <p>「まずは概算だけ知りたい」「他社との比較をしたい」など、<br>お見積りだけのご相談も大歓迎です。</p>
-  <a class="btn" href="contact.html">お見積りを依頼する</a>
-</section>
+        <!-- 商業施設・病院清掃 -->
+        <div class="price-box">
+            <h3>商業施設・病院清掃</h3>
+            <p><strong>お問い合わせください</strong></p>
+            <ul>
+                <li>広い床面や高頻度清掃が必要な施設に対応</li>
+                <li>衛生管理を重視した清掃を実施</li>
+                <li>定期契約対応可能</li>
+            </ul>
+        </div>
+
+        <!-- ホテル清掃 -->
+        <div class="price-box">
+            <h3>ホテル客室清掃</h3>
+            <p><strong>1室：800円〜</strong></p>
+            <ul>
+                <li>ベッドメイク・アメニティ補充・浴室清掃</li>
+                <li>ムラなく安定した品質管理</li>
+                <li>大型ホテルも対応可能</li>
+            </ul>
+        </div>
+
+        <p style="margin-top:20px;">
+            ※ 上記料金は目安です。現場の広さ・頻度・作業内容により変動します。<br>
+            正確なお見積りは現地調査後にご提示いたします。
+        </p>
+    </section>
+
+</main>
 
 <footer>
-  <p>© 2025 株式会社Luce</p>
+    <p>© 2025 株式会社Luce</p>
 </footer>
 
 </body>
