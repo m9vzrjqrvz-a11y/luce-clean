@@ -1,6 +1,4 @@
-/* ===========================
-   RESET
-=========================== */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -15,72 +13,62 @@ body {
     background-color: #fff;
 }
 
-/* ===========================
-   HEADER（完全復元）
-=========================== */
+/* =======================================
+   HEADER（バグ修正済み）
+======================================= */
 header {
     width: 100%;
-    background: #ffffff;
+    padding: 10px 16px;
+    background: #fff;
     border-bottom: 1px solid #e5e5e5;
-}
-
-.header-inner {
-    max-width: 1100px;
-    margin: auto;
-    padding: 12px 16px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
 }
 
-/* ロゴ */
 .logo {
-    height: 48px;
+    height: 42px !important;   /* ← img に正しく適用される */
     width: auto;
-    display: block;
 }
 
-/* ナビゲーション */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 18px;
-    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-nav ul li a {
+nav ul li {
+    list-style: none;
+}
+
+nav a {
     text-decoration: none;
     color: #333;
-    font-size: 15px;
+    font-size: 14px;
     padding: 3px 4px;
     border-radius: 3px;
+    white-space: nowrap;
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: #00a3a5;
 }
 
-/* スマホ対応 */
+/* スマホ */
 @media (max-width: 600px) {
-    .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    nav ul {
+    header {
         flex-wrap: wrap;
-        gap: 10px 14px;
     }
-
-    nav ul li a {
-        font-size: 13px;
+    nav ul {
+        gap: 10px;
     }
 }
 
-/* ===========================
-   HERO（トップ画像）
-=========================== */
+/* =======================================
+   HERO
+======================================= */
 .hero {
     position: relative;
     width: 100%;
@@ -94,64 +82,109 @@ nav ul li a:hover {
 
 .hero-title {
     position: absolute;
-    bottom: 18px;
+    bottom: 20px;
     left: 16px;
     right: 16px;
     color: #fff;
-    font-size: 22px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
 @media (max-width: 600px) {
     .hero-title {
         font-size: 18px;
-        bottom: 12px;
     }
 }
 
-/* ===========================
-   PAGE CONTAINER
-=========================== */
+/* =======================================
+   MAIN CONTENT
+======================================= */
 .page-container {
-    max-width: 950px;
-    margin: 0 auto;
-    padding: 32px 16px;
+    max-width: 1000px;
+    margin: 32px auto;
+    padding: 0 16px;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
-    border-left: 6px solid #00b1b3;
-    padding-left: 10px;
+    font-size: 22px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00b1b3, #7ed4ff);
+    border-radius: 5px;
 }
 
 h3 {
     font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 8px;
+    margin: 20px 0 8px;
 }
 
-/* ===========================
-   LIST
-=========================== */
 ul {
-    margin-left: 1.2em;
-    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
-ul li {
-    margin-bottom: 5px;
+/* =======================================
+   料金表（再崩壊対策済み）
+======================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
-/* ===========================
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background: #e9f9f9;
+    color: #008b8d;
+    font-weight: 600;
+}
+
+/* スマホ：カード式 */
+@media (max-width: 600px) {
+    table thead {
+        display: none;
+    }
+    table tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    table td {
+        display: flex;
+        padding: 6px 0;
+    }
+    table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        width: 110px;
+        color: #008b8d;
+    }
+}
+
+/* =======================================
    FOOTER
-=========================== */
+======================================= */
 footer {
     text-align: center;
-    padding: 20px;
-    font-size: 13px;
-    background: #f7f7f7;
+    padding: 14px;
+    background: #f5f5f5;
     margin-top: 40px;
-    color: #555;
+    font-size: 13px;
+    color: #666;
 }
