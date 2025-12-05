@@ -105,3 +105,14 @@ footer {
     font-size: 14px;
     margin-top: 40px;
 }
+/* ーーーーーーーーーーーーーーー */
+/* ホーム以外のページで hero の影響を消す */
+/* ーーーーーーーーーーーーーーー */
+
+body:not(.home) .hero {
+    display: none;       /* ホーム以外では hero を消す */
+}
+
+body:not(.home) .hero img {
+    display: none;
+}
