@@ -1,6 +1,6 @@
-/* ================================
-   基本リセット
-================================ */
+/* ===========================
+   RESET
+=========================== */
 * {
     margin: 0;
     padding: 0;
@@ -13,20 +13,20 @@ body {
     line-height: 1.6;
 }
 
-/* ================================
-   ヘッダー（全ページ共通）
-================================ */
+/* ===========================
+   HEADER
+=========================== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background: #fff;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
 }
 
 header .logo img {
-    height: 48px;   /* ←ロゴ小さめに調整 */
+    height: 48px;
     width: auto;
 }
 
@@ -34,16 +34,16 @@ nav a {
     margin-left: 15px;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 nav a:hover {
     color: #42a1ff;
 }
 
-/* ================================
-   トップページ専用
-================================ */
+/* ===========================
+   HERO (HOME ONLY)
+=========================== */
 .hero {
     position: relative;
     width: 100%;
@@ -56,19 +56,37 @@ nav a:hover {
     display: block;
 }
 
-.hero-title {
+.hero-text {
     position: absolute;
-    bottom: 20px;
+    bottom: 25px;
     left: 20px;
-    font-size: 34px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
 }
 
-/* ================================
-   ページ共通セクション
-================================ */
+.home-title {
+    text-align: center;
+    margin: 30px 0 10px 0;
+}
+
+.home-title img {
+    width: 180px;
+    height: auto;
+}
+
+.catch-copy {
+    text-align: center;
+    font-size: 20px;
+    color: #42a1ff;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
 section {
     padding: 40px 20px;
     max-width: 1000px;
@@ -76,28 +94,30 @@ section {
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
-/* ================================
-   サービス画像（サービスページ専用）
-================================ */
-.service-image {
+.service-photo {
     width: 100%;
-    display: block;
+    border-radius: 8px;
     margin-bottom: 10px;
 }
 
 .service-title-img {
-    width: 100%;
-    height: auto;
-    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 34px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
-/* ================================
-   フッター
-================================ */
+/* ===========================
+   FOOTER
+=========================== */
 footer {
     text-align: center;
     padding: 15px;
@@ -105,14 +125,12 @@ footer {
     font-size: 14px;
     margin-top: 40px;
 }
-/* ーーーーーーーーーーーーーーー */
-/* ホーム以外のページで hero の影響を消す */
-/* ーーーーーーーーーーーーーーー */
 
-body:not(.home) .hero {
-    display: none;       /* ホーム以外では hero を消す */
-}
-
-body:not(.home) .hero img {
+/* ===========================
+   HOME ONLY
+=========================== */
+body:not(.home) .hero,
+body:not(.home) .home-title,
+body:not(.home) .catch-copy {
     display: none;
 }
