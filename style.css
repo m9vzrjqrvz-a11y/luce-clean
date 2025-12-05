@@ -14,7 +14,7 @@ body {
 }
 
 /* =======================================
-   HEADER（バグ修正済み）
+   HEADER（完全安定版）
 ======================================= */
 header {
     width: 100%;
@@ -25,11 +25,20 @@ header {
     align-items: center;
     justify-content: flex-start;
     gap: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    height: 42px !important;   /* ← img に正しく適用される */
+    height: 42px !important; 
     width: auto;
+    display: block;
+}
+
+/* nav */
+nav {
+    flex: 1;
 }
 
 nav ul {
@@ -47,7 +56,7 @@ nav a {
     text-decoration: none;
     color: #333;
     font-size: 14px;
-    padding: 3px 4px;
+    padding: 4px 6px;
     border-radius: 3px;
     white-space: nowrap;
 }
@@ -60,9 +69,10 @@ nav a:hover {
 @media (max-width: 600px) {
     header {
         flex-wrap: wrap;
+        padding-bottom: 14px;
     }
     nav ul {
-        gap: 10px;
+        gap: 12px;
     }
 }
 
@@ -72,6 +82,7 @@ nav a:hover {
 .hero {
     position: relative;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .hero-img {
@@ -98,12 +109,17 @@ nav a:hover {
 }
 
 /* =======================================
-   MAIN CONTENT
+   PAGE LAYOUT
 ======================================= */
 .page-container {
     max-width: 1000px;
-    margin: 32px auto;
-    padding: 0 16px;
+    margin: 0 auto;
+    padding: 20px 16px 60px;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 16px;
 }
 
 h2 {
@@ -129,23 +145,30 @@ h3 {
 }
 
 ul {
-    margin-left: 20px;
+    margin-left: 18px;
+    margin-bottom: 12px;
+}
+
+ul li {
+    margin-bottom: 4px;
 }
 
 /* =======================================
-   料金表（再崩壊対策済み）
+   TABLE（料金表完全復旧）
 ======================================= */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    background: #fff;
 }
 
 table th,
 table td {
     border: 1px solid #ccc;
     padding: 10px;
-    text-align: left;
+    font-size: 14px;
+    vertical-align: top;
 }
 
 table th {
@@ -154,27 +177,39 @@ table th {
     font-weight: 600;
 }
 
-/* スマホ：カード式 */
+/* スマホ（カード式） */
 @media (max-width: 600px) {
     table thead {
         display: none;
     }
+
     table tr {
         display: block;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
         border: 1px solid #ccc;
         padding: 10px;
     }
+
     table td {
         display: flex;
         padding: 6px 0;
     }
+
     table td::before {
         content: attr(data-label);
         font-weight: bold;
         width: 110px;
         color: #008b8d;
+        flex-shrink: 0;
     }
+}
+
+/* =======================================
+   IMAGE COMMON
+======================================= */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* =======================================
@@ -182,9 +217,9 @@ table th {
 ======================================= */
 footer {
     text-align: center;
-    padding: 14px;
+    padding: 16px;
     background: #f5f5f5;
-    margin-top: 40px;
     font-size: 13px;
     color: #666;
+    margin-top: 40px;
 }
