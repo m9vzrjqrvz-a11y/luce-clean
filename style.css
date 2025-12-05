@@ -1,154 +1,209 @@
-/* --------------------------------------------------
-   全体設定
--------------------------------------------------- */
-body {
+/* ===========================
+   RESET
+=========================== */
+* {
     margin: 0;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    line-height: 1.8;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont,
+        "Helvetica Neue", Arial, sans-serif;
     color: #333;
-    background: #fff;
+    line-height: 1.7;
+    background-color: #fff;
 }
 
-/* --------------------------------------------------
-   ヘッダー
--------------------------------------------------- */
+/* ===========================
+   HEADER
+=========================== */
 header {
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-    background: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.header-inner {
-    max-width: 1050px;
-    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
 }
 
-/* ロゴ（絶対サイズ固定） */
-.logo {
-    height: 40px;
+header .logo img {
+    height: 52px;
     width: auto;
 }
 
-/* --------------------------------------------------
-   ナビ
--------------------------------------------------- */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
-}
-
 nav a {
+    margin-left: 12px;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
-    transition: 0.2s;
+    font-size: 14px;
 }
 
 nav a:hover {
-    color: #5ab55e;
+    color: #2b8cff;
 }
 
-/* --------------------------------------------------
-   コンテンツエリア
--------------------------------------------------- */
-.page-container {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
+/* スマホ用ヘッダー調整 */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 13px;
+    }
 }
 
-/* --------------------------------------------------
-   見出し
--------------------------------------------------- */
+/* ===========================
+   HERO（トップページ）
+=========================== */
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+@media (max-width: 600px) {
+    .hero-text {
+        font-size: 18px;
+        bottom: 14px;
+        left: 12px;
+        right: 12px;
+    }
+}
+
+/* ===========================
+   SECTION 共通
+=========================== */
+section {
+    padding: 32px 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 h1 {
-    font-size: 28px;
-    margin: 20px 0 10px;
-    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 16px;
 }
 
 h2 {
     font-size: 22px;
-    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 18px 0 8px;
+}
+
+p {
     margin-bottom: 10px;
 }
 
-/* --------------------------------------------------
-   画像（サービス画像）
--------------------------------------------------- */
-.service-img {
+/* ===========================
+   SERVICE 画像
+=========================== */
+.service-photo {
     width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin: 25px 0 10px;
+    border-radius: 8px;
+    margin: 18px 0 8px;
+    display: block;
+    object-fit: cover;
 }
 
-/* --------------------------------------------------
-   料金表（スマホ対応）
--------------------------------------------------- */
-table.price-table {
-    border-collapse: collapse;
+/* ===========================
+   LIST
+=========================== */
+ul {
+    margin-left: 1.2em;
+    margin-bottom: 10px;
+}
+
+ul li {
+    margin-bottom: 4px;
+}
+
+/* ===========================
+   PRICE TABLE
+=========================== */
+.price-table {
     width: 100%;
-    margin-top: 20px;
-    font-size: 16px;
+    border-collapse: collapse;
+    margin-top: 16px;
 }
 
 .price-table th,
 .price-table td {
-    border: 1px solid #ccc;
-    padding: 12px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+    vertical-align: top;
 }
 
 .price-table th {
-    background: #f7f7f7;
-    font-weight: bold;
-    text-align: left;
+    background: #f5f5f5;
+    font-weight: 600;
 }
 
+/* スマホ表示：行ごとカード風 */
 @media (max-width: 600px) {
-    table.price-table {
-        font-size: 15px;
+    .price-table thead {
+        display: none;
     }
-    .price-table th,
+
+    .price-table tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+    }
+
     .price-table td {
-        padding: 10px;
+        display: flex;
+        padding: 8px;
+    }
+
+    .price-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        margin-right: 8px;
+        min-width: 90px;
+        color: #555;
     }
 }
 
-/* --------------------------------------------------
-   会社概要ロゴ（大きめでセンター表示）
--------------------------------------------------- */
-.company-logo-large {
-    width: 220px;
-    display: block;
-    margin: 20px auto 30px auto;
-}
-
-/* --------------------------------------------------
-   お問い合わせフォーム
--------------------------------------------------- */
-iframe {
-    border-radius: 6px;
-    border: 1px solid #ddd;
-}
-
-/* --------------------------------------------------
-   フッター
--------------------------------------------------- */
+/* ===========================
+   FOOTER
+=========================== */
 footer {
-    padding: 20px;
     text-align: center;
-    font-size: 14px;
-    color: #666;
-    margin-top: 60px;
-    border-top: 1px solid #ddd;
+    padding: 14px;
+    font-size: 13px;
+    background: #f7f7f7;
+    margin-top: 32px;
 }
