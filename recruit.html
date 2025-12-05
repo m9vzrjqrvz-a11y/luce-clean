@@ -1,61 +1,99 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>採用情報｜株式会社Luce</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>採用情報｜株式会社Luce</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <h1>株式会社Luce</h1>
-  <nav>
-    <a href="index.html">ホーム</a>
-    <a href="service.html">サービス</a>
-    <a href="price.html">料金</a>
-    <a href="recruit.html">採用情報</a>
-    <a href="about.html">会社概要</a>
-    <a href="contact.html">お問い合わせ</a>
-  </nav>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand">
+            <img src="22881554-1D14-4B53-9564-FB3A4DC5D36C.png" alt="Luceロゴ" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-name">株式会社Luce</span>
+                <span class="brand-tagline">日常清掃・マンション・商業施設・ホテル清掃</span>
+            </div>
+        </a>
+
+        <nav class="global-nav">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="service.html">サービス</a></li>
+                <li><a href="price.html">料金</a></li>
+                <li><a href="about.html">会社概要</a></li>
+                <li><a href="recruit.html" class="active">採用情報</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<section class="page-title">
-  <h2>採用情報</h2>
-  <p>Luceでは、一緒に働く仲間を募集しています。<br>未経験の方も安心してスタートできます。</p>
-</section>
+<main class="container">
 
-<section>
-  <div class="card">
-    <h3>アルバイト・パート</h3>
-    <p><strong>時給：1,200円〜</strong></p>
-    <ul>
-      <li>業務内容：日常清掃・マンション清掃・ホテル客室清掃</li>
-      <li>シフト制（勤務時間は現場による）</li>
-      <li>勤務地：大阪市内・近郊の各現場</li>
-      <li>未経験OK・WワークOK</li>
-    </ul>
-  </div>
+    <h1 class="page-title">採用情報</h1>
 
-  <div class="card">
-    <h3>正社員</h3>
-    <p><strong>月給：200,000円〜</strong></p>
-    <ul>
-      <li>業務内容：現場管理・スタッフ指導・品質管理など</li>
-      <li>実働8時間・シフト制</li>
-      <li>社会保険完備・昇給あり</li>
-    </ul>
-  </div>
-</section>
+    <p>株式会社Luceでは、一緒に働く仲間を募集しています。未経験の方も安心してスタートできます！</p>
 
-<section>
-  <p>詳細条件や面接日程についてはお気軽にお問い合わせください。</p>
-  <a class="btn" href="contact.html">採用について相談する</a>
-</section>
+    <!-- アルバイト・パート -->
+    <section class="recruit-section">
+        <h2>アルバイト・パート</h2>
+        <table class="recruit-table">
+            <tr>
+                <th>時給</th>
+                <td>1,200円〜</td>
+            </tr>
+            <tr>
+                <th>仕事内容</th>
+                <td>日常清掃・マンション清掃・ホテル客室清掃など</td>
+            </tr>
+            <tr>
+                <th>勤務地</th>
+                <td>大阪市内・近郊</td>
+            </tr>
+            <tr>
+                <th>勤務時間</th>
+                <td>シフト制（現場により異なる）</td>
+            </tr>
+            <tr>
+                <th>備考</th>
+                <td>未経験OK・WワークOK</td>
+            </tr>
+        </table>
+    </section>
 
-<footer>
-  <p>© 2025 株式会社Luce</p>
+    <!-- 正社員 -->
+    <section class="recruit-section">
+        <h2>正社員</h2>
+        <table class="recruit-table">
+            <tr>
+                <th>月給</th>
+                <td>200,000円〜</td>
+            </tr>
+            <tr>
+                <th>仕事内容</th>
+                <td>現場管理・スタッフ指導・品質管理業務など</td>
+            </tr>
+            <tr>
+                <th>勤務時間</th>
+                <td>実働8時間・シフト制</td>
+            </tr>
+            <tr>
+                <th>待遇</th>
+                <td>社会保険完備・昇給あり</td>
+            </tr>
+        </table>
+    </section>
+
+    <p>詳しい条件や面接日程については、お気軽にお問い合わせください。</p>
+
+</main>
+
+<footer class="site-footer">
+    <p>© 2025 株式会社Luce</p>
 </footer>
 
 </body>
