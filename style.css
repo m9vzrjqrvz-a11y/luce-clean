@@ -8,121 +8,96 @@ body {
 
 /* ヘッダー */
 header {
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-bottom: 1px solid #ddd;
+    background: #fff;
 }
 
 .header-inner {
+    max-width: 1000px;
+    margin: auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     height: 50px;
 }
 
-/* ナビ */
+/* ナビゲーション */
 nav ul {
     list-style: none;
-    display: flex;
-    gap: 16px;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 22px;
 }
 
 nav a {
     text-decoration: none;
     color: #333;
-    font-size: 15px;
+    font-size: 16px;
 }
 
-/* 画像 */
-.hero {
-    position: relative;
+/* コンテンツ幅 */
+.page-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
-.hero-img {
+/* サービス画像 */
+.service-img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 6px;
+    margin: 25px 0 10px 0;
 }
 
-.hero-title {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 22px;
-    color: white;
-    font-weight: bold;
-    text-shadow: 0 0 6px rgba(0,0,0,0.7);
+/* セクション共通 */
+.service-block {
+    margin-bottom: 50px;
 }
 
-/* 共通コンテナ */
-.page-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* 見出し */
-h2 {
+.service-title {
     font-size: 26px;
     font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 料金表 */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
 }
 
-h3 {
-    font-size: 22px;
-    margin-top: 30px;
+.price-table th, .price-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+.price-table th {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+/* 会社概要ページ */
+.company-logo-large {
+    width: 40%;
+    max-width: 280px;
+    display: block;
+    margin: 20px auto 40px auto;
 }
 
 /* フッター */
 footer {
+    padding: 20px;
     text-align: center;
-    padding: 25px 0;
+    font-size: 14px;
     color: #666;
     border-top: 1px solid #ddd;
     margin-top: 50px;
-}
-/* 料金ページ */
-.price-table {
-    margin-top: 30px;
-}
-
-.price-block {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 20px;
-    margin-bottom: 25px;
-    background: #fafafa;
-}
-
-.price-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.price-left {
-    font-weight: bold;
-}
-
-.price-right {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-}
-
-.note {
-    font-size: 14px;
-    color: #666;
-    margin-top: 8px;
-}
-
-.bottom-note {
-    font-size: 14px;
-    color: #444;
-    margin-top: 20px;
 }
