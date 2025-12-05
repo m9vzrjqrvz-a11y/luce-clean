@@ -16,7 +16,7 @@ body {
 }
 
 /* ===========================
-   HEADER（完全復元＋安定）
+   HEADER（完全復元）
 =========================== */
 header {
     width: 100%;
@@ -33,7 +33,7 @@ header {
     align-items: center;
 }
 
-/* ロゴ統一サイズ */
+/* ロゴ */
 .logo {
     height: 48px;
     width: auto;
@@ -54,14 +54,13 @@ nav ul li a {
     font-size: 15px;
     padding: 3px 4px;
     border-radius: 3px;
-    transition: 0.2s;
 }
 
 nav ul li a:hover {
-    color: #00a3a5; /* Luceイメージの緑×水色 */
+    color: #00a3a5;
 }
 
-/* スマホレイアウト */
+/* スマホ対応 */
 @media (max-width: 600px) {
     .header-inner {
         flex-direction: column;
@@ -80,7 +79,7 @@ nav ul li a:hover {
 }
 
 /* ===========================
-   HERO（トップ）
+   HERO（トップ画像）
 =========================== */
 .hero {
     position: relative;
@@ -112,20 +111,17 @@ nav ul li a:hover {
 }
 
 /* ===========================
-   ページ共通
+   PAGE CONTAINER
 =========================== */
-.page-container,
-section {
+.page-container {
     max-width: 950px;
     margin: 0 auto;
     padding: 32px 16px;
 }
 
-/* タイトル */
 h2 {
     font-size: 24px;
     margin-bottom: 16px;
-    padding-bottom: 6px;
     border-left: 6px solid #00b1b3;
     padding-left: 10px;
 }
@@ -146,64 +142,6 @@ ul {
 
 ul li {
     margin-bottom: 5px;
-}
-
-/* ===========================
-   SERVICE 画像
-=========================== */
-.service-photo {
-    width: 100%;
-    border-radius: 10px;
-    margin: 18px 0 8px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* ===========================
-   PRICE TABLE
-=========================== */
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 16px;
-}
-
-.price-table th,
-.price-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    font-size: 14px;
-}
-
-.price-table th {
-    background: #f3fafc;
-    color: #008b8d;
-}
-
-/* スマホ（カード型） */
-@media (max-width: 600px) {
-    .price-table thead {
-        display: none;
-    }
-
-    .price-table tr {
-        display: block;
-        margin-bottom: 14px;
-        border: 1px solid #ddd;
-    }
-
-    .price-table td {
-        display: flex;
-        padding: 8px;
-    }
-
-    .price-table td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        margin-right: 8px;
-        min-width: 90px;
-        color: #008b8d;
-    }
 }
 
 /* ===========================
