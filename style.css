@@ -8,9 +8,10 @@
 }
 
 body {
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.7;
+    background-color: #fff;
 }
 
 /* ===========================
@@ -20,29 +21,49 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background: #fff;
+    padding: 10px 16px;
+    background: #ffffff;
     border-bottom: 1px solid #eee;
 }
 
 header .logo img {
-    height: 48px;
+    height: 52px;
     width: auto;
 }
 
 nav a {
-    margin-left: 15px;
+    margin-left: 12px;
     text-decoration: none;
     color: #333;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 nav a:hover {
-    color: #42a1ff;
+    color: #2b8cff;
+}
+
+/* スマホでナビが詰まりすぎないよう調整 */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 13px;
+    }
 }
 
 /* ===========================
-   HERO (HOME ONLY)
+   HERO（ホームだけ）
 =========================== */
 .hero {
     position: relative;
@@ -58,82 +79,121 @@ nav a:hover {
 
 .hero-text {
     position: absolute;
-    bottom: 25px;
-    left: 20px;
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
     color: #fff;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
-    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
-/* ホーム以外ではヒーロー非表示 */
-body:not(.home) .hero {
-    display: none;
+@media (max-width: 600px) {
+    .hero-text {
+        font-size: 18px;
+        bottom: 14px;
+        left: 12px;
+        right: 12px;
+    }
 }
 
 /* ===========================
-   CONTENT
+   SECTION 共通
 =========================== */
 section {
-    padding: 40px 20px;
+    padding: 32px 16px;
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 16px;
 }
 
 h2 {
-    font-size: 26px;
-    margin-bottom: 15px;
+    font-size: 22px;
+    margin-bottom: 12px;
 }
 
 h3 {
-    font-size: 22px;
-    margin: 25px 0 10px;
+    font-size: 18px;
+    margin: 18px 0 8px;
 }
 
-/* サービス画像など */
+p {
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   SERVICE 画像
+=========================== */
 .service-photo {
     width: 100%;
     border-radius: 8px;
-    margin: 20px 0 10px;
+    margin: 18px 0 8px;
+    display: block;
+    object-fit: cover;
 }
 
-/* リスト */
+/* ===========================
+   LIST
+=========================== */
 ul {
     margin-left: 1.2em;
-    margin-top: 8px;
+    margin-bottom: 10px;
 }
 
 ul li {
     margin-bottom: 4px;
 }
 
-/* テーブル（料金） */
+/* ===========================
+   PRICE TABLE
+=========================== */
 .price-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 .price-table th,
 .price-table td {
     border: 1px solid #ddd;
     padding: 10px;
+    font-size: 14px;
+    vertical-align: top;
 }
 
 .price-table th {
     background: #f5f5f5;
-    text-align: left;
+    font-weight: 600;
 }
 
-/* recruit など小見出し */
-.small-title {
-    font-weight: bold;
-    margin-top: 10px;
+/* スマホ表示：行ごとカード風 */
+@media (max-width: 600px) {
+    .price-table thead {
+        display: none;
+    }
+
+    .price-table tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+    }
+
+    .price-table td {
+        display: flex;
+        padding: 8px;
+    }
+
+    .price-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        margin-right: 8px;
+        min-width: 90px;
+        color: #555;
+    }
 }
 
 /* ===========================
@@ -141,53 +201,8 @@ ul li {
 =========================== */
 footer {
     text-align: center;
-    padding: 15px;
-    background: #f4f4f4;
-    font-size: 14px;
-    margin-top: 40px;
-}
-/* ===========================
-   TABLE RESPONSIVE (料金表)
-=========================== */
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    table-layout: fixed;  /* 列幅を均等に */
-}
-
-.price-table th,
-.price-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    word-wrap: break-word; /* 長文がはみ出さない */
-    font-size: 15px;
-}
-
-/* スマホでは縦並びにして見やすく */
-@media (max-width: 600px) {
-    .price-table thead {
-        display: none; /* 見出しを消す */
-    }
-
-    .price-table tr {
-        display: block;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        padding: 10px;
-    }
-
-    .price-table td {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px 5px;
-        font-size: 15px;
-    }
-
-    .price-table td::before {
-        content: attr(data-label); /* 見出しを疑似表示 */
-        font-weight: bold;
-        margin-right: 10px;
-        color: #555;
-    }
+    padding: 14px;
+    font-size: 13px;
+    background: #f7f7f7;
+    margin-top: 32px;
 }
