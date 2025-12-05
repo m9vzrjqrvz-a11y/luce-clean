@@ -186,3 +186,13 @@ body {
     line-height: 1.7;
     text-align: center;
 }
+/* ==== ロゴサイズ調整 ==== */
+.logo img, 
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+header .logo img {
+    display: block;
+}
