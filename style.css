@@ -1,6 +1,4 @@
-/* ===========================
-   RESET
-=========================== */
+/* リセット */
 * {
     margin: 0;
     padding: 0;
@@ -8,68 +6,48 @@
 }
 
 body {
-    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont,
-        "Helvetica Neue", Arial, sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     color: #333;
     line-height: 1.7;
-    background-color: #fff;
+    background: #fff;
 }
 
-/* ===========================
-   HEADER
-=========================== */
+/* ====== HEADER ====== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 16px;
+    padding: 12px 20px;
     background: #ffffff;
     border-bottom: 1px solid #eee;
 }
 
 header .logo img {
-    height: 52px;
+    height: 48px;
     width: auto;
 }
 
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+}
+
 nav a {
-    margin-left: 12px;
     text-decoration: none;
     color: #333;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #2b8cff;
+    color: #2a8be8;
 }
 
-/* スマホ用ヘッダー調整 */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    nav a {
-        margin-left: 0;
-        font-size: 13px;
-    }
-}
-
-/* ===========================
-   HERO（トップページ）
-=========================== */
+/* ====== HERO ====== */
 .hero {
     position: relative;
     width: 100%;
-    overflow: hidden;
 }
 
 .hero img {
@@ -81,129 +59,37 @@ nav a:hover {
 .hero-text {
     position: absolute;
     bottom: 20px;
-    left: 16px;
-    right: 16px;
+    left: 50%;
+    transform: translateX(-50%);
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    text-align: center;
+    padding: 8px 22px;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 6px;
+    white-space: nowrap;
 }
 
-@media (max-width: 600px) {
-    .hero-text {
-        font-size: 18px;
-        bottom: 14px;
-        left: 12px;
-        right: 12px;
-    }
-}
-
-/* ===========================
-   SECTION 共通
-=========================== */
+/* ====== CONTENT ====== */
 section {
-    padding: 32px 16px;
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 h1 {
-    font-size: 26px;
-    margin-bottom: 16px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 1.4;
 }
 
-h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-h3 {
-    font-size: 18px;
-    margin: 18px 0 8px;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-/* ===========================
-   SERVICE 画像
-=========================== */
-.service-photo {
-    width: 100%;
-    border-radius: 8px;
-    margin: 18px 0 8px;
-    display: block;
-    object-fit: cover;
-}
-
-/* ===========================
-   LIST
-=========================== */
-ul {
-    margin-left: 1.2em;
-    margin-bottom: 10px;
-}
-
-ul li {
-    margin-bottom: 4px;
-}
-
-/* ===========================
-   PRICE TABLE
-=========================== */
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 16px;
-}
-
-.price-table th,
-.price-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    font-size: 14px;
-    vertical-align: top;
-}
-
-.price-table th {
-    background: #f5f5f5;
-    font-weight: 600;
-}
-
-/* スマホ表示：行ごとカード風 */
-@media (max-width: 600px) {
-    .price-table thead {
-        display: none;
-    }
-
-    .price-table tr {
-        display: block;
-        margin-bottom: 12px;
-        border: 1px solid #ddd;
-    }
-
-    .price-table td {
-        display: flex;
-        padding: 8px;
-    }
-
-    .price-table td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        margin-right: 8px;
-        min-width: 90px;
-        color: #555;
-    }
-}
-
-/* ===========================
-   FOOTER
-=========================== */
+/* ====== FOOTER ====== */
 footer {
     text-align: center;
-    padding: 14px;
-    font-size: 13px;
-    background: #f7f7f7;
-    margin-top: 32px;
+    padding: 20px;
+    margin-top: 40px;
+    background: #f6f6f6;
+    font-size: 14px;
+    color: #666;
 }
