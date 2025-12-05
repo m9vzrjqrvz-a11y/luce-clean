@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://m9vzrjqrvz-a11y.github.io/luce-clean/sitemap.xml
