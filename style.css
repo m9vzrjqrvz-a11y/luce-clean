@@ -10,11 +10,11 @@ body {
         BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     color: #333;
     line-height: 1.7;
-    background: #fff;
+    background-color: #fff;
 }
 
 /* =======================================
-   HEADER
+   HEADER（ナビゲーション）
 ======================================= */
 header {
     width: 100%;
@@ -23,13 +23,12 @@ header {
     border-bottom: 1px solid #e5e5e5;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
 }
 
 .logo {
     height: 42px;
     width: auto;
-    flex-shrink: 0;
 }
 
 nav ul {
@@ -58,7 +57,7 @@ nav a:hover {
 }
 
 /* =======================================
-   HERO（背景ロゴ完全排除版）
+   HERO（トップページだけ）
 ======================================= */
 .hero {
     position: relative;
@@ -66,10 +65,17 @@ nav a:hover {
     overflow: hidden;
 }
 
+/* ★ hero-img を完全にトップページ専用にする！ */
 .hero-img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* ★ hero 以外のページには画像を絶対出さない */
+.hero + img,
+section img.logo-background {
+    display: none !important;
 }
 
 .hero-title {
@@ -90,7 +96,7 @@ nav a:hover {
 }
 
 /* =======================================
-   PAGE BASE
+   共通コンテンツ
 ======================================= */
 .page-container {
     max-width: 1000px;
@@ -98,14 +104,38 @@ nav a:hover {
     padding: 0 16px;
 }
 
+h1, h2 {
+    font-weight: 700;
+}
+
 h2 {
     font-size: 22px;
     margin-bottom: 12px;
-    font-weight: bold;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00b1b3, #7ed4ff);
+    border-radius: 5px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 18px 0 8px;
+}
+
+ul {
+    margin-left: 20px;
 }
 
 /* =======================================
-   料金表（完全修正版）
+   テーブル（料金表）
 ======================================= */
 table {
     width: 100%;
@@ -117,22 +147,24 @@ table th,
 table td {
     border: 1px solid #ccc;
     padding: 10px;
+    text-align: left;
 }
 
 table th {
     background: #e9f9f9;
     color: #008b8d;
+    font-weight: 600;
 }
 
-/* スマホ版カード表示 */
+/* スマホ：カード式 */
 @media (max-width: 600px) {
     table thead {
         display: none;
     }
     table tr {
         display: block;
-        border: 1px solid #ccc;
         margin-bottom: 12px;
+        border: 1px solid #ccc;
         padding: 10px;
     }
     table td {
@@ -148,6 +180,15 @@ table th {
 }
 
 /* =======================================
+   MAP（会社概要の地図）
+======================================= */
+.map-wrap iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+/* =======================================
    FOOTER
 ======================================= */
 footer {
@@ -157,8 +198,4 @@ footer {
     margin-top: 40px;
     font-size: 13px;
     color: #666;
-}
-/* 背景ロゴを完全に無効化（強制OFF） */
-.bg-logo {
-    display: none !important;
 }
