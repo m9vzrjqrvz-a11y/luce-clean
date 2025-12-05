@@ -292,3 +292,11 @@ a[href*="contact"]:hover {
     background: #009295;
     transform: translateY(-2px);
 }
+header a[href*="contact"] {
+    background: none !important;
+    color: #333 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
