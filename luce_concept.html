@@ -16,11 +16,16 @@
 body {
   font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
   color: #333;
-  background: #f3f9f6; /* ミント系背景 */
+  background: #f3f9f6; /* ミント背景 */
   line-height: 1.8;
-  padding: 40px 16px 60px;
+  padding-bottom: 60px;
+}
+
+/* ページコンテナ */
+.container {
   max-width: 900px;
   margin: auto;
+  padding: 40px 16px;
 }
 
 /* タイトル */
@@ -29,44 +34,117 @@ body {
   font-weight: 700;
   color: #1f5e4e;
   letter-spacing: 0.1em;
-  margin-bottom: 10px;
 }
 
 .title-underline {
   width: 120px;
   height: 3px;
   background: linear-gradient(90deg, #48c79c, #6ad2b5);
-  margin-bottom: 30px;
+  margin: 12px 0 28px;
   border-radius: 999px;
 }
 
-/* 本文 */
+/* テキスト */
 .text {
   font-size: 16px;
   margin-bottom: 24px;
+}
+
+/* 画像 */
+.image-block {
+  margin: 30px 0 50px;
+}
+
+.image-block img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* セクションタイトル */
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f5e4e;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.section-underline {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #6ad2b5, #48c79c);
+  margin-bottom: 20px;
+  border-radius: 999px;
 }
 </style>
 </head>
 
 <body>
 
-<h2 class="title">会社理念</h2>
-<div class="title-underline"></div>
+<div class="container">
 
-<p class="text">
-  私たちは、清潔で安全な環境を整え、人々の暮らしと事業を支えることを使命とします。<br>
-  地域で最も信頼される清掃会社であるために、誠実な仕事、安全の徹底、品質へのこだわりを大切にします。
-</p>
+  <!-- 会社理念 -->
+  <h2 class="title">会社理念</h2>
+  <div class="title-underline"></div>
 
-<p class="text">
-  そして私たちは、一人ひとりが “自由と自律” を持って行動できる会社であることを重視します。<br>
-  自由とは、ただ好きなように動くことではありません。自分で考え、自分で選び、その結果に責任を持つこと。<br>
-  その自由が、仕事の質を高め、社員の成長を促し、会社の未来を切り開く力になると信じています。
-</p>
+  <p class="text">
+    私たちは、清潔で安全な環境を整え、人々の暮らしと事業を支えることを使命とします。<br>
+    地域で最も信頼される清掃会社であるために、誠実な仕事、安全の徹底、品質へのこだわりを大切にします。
+  </p>
 
-<p class="text">
-  私たちは清掃のプロとして、誠実さ・安全・品質・自由・成長を軸に、地域社会に安心と価値を提供し続けます。
-</p>
+  <p class="text">
+    そして私たちは、一人ひとりが “自由と自律” を持って行動できる会社であることを重視します。<br>
+    自由とは、ただ好きなように動くことではありません。自分で考え、自分で選び、その結果に責任を持つこと。<br>
+    その自由が、仕事の質を高め、社員の成長を促し、会社の未来を切り開く力になると信じています。
+  </p>
+
+  <p class="text">
+    私たちは清掃のプロとして、誠実さ・安全・品質・自由・成長を軸に、地域社会に安心と価値を提供し続けます。
+  </p>
+
+  <!-- 理念イメージ画像（IMG_8618） -->
+  <div class="image-block">
+    <img src="IMG_8618.jpeg" alt="理念イメージ">
+  </div>
+
+  <!-- サービス品質 -->
+  <h3 class="section-title">サービス品質</h3>
+  <div class="section-underline"></div>
+
+  <p class="text">
+    Luce の清掃は「汚れを落とす」だけでなく、空間の心地よさまでデザインします。  
+    香り・導線・仕上がりの美しさにこだわり、また来たくなる空間をつくります。
+  </p>
+
+  <div class="image-block">
+    <img src="IMG_8619.jpeg" alt="サービス品質イメージ">
+  </div>
+
+  <!-- 研修・スタッフ品質 -->
+  <h3 class="section-title">スタッフ品質</h3>
+  <div class="section-underline"></div>
+
+  <p class="text">
+    定期研修を行い、技術・マナー・ホスピタリティを常にアップデート。  
+    安心して任せられる “誠実な清掃のプロ” を育成しています。
+  </p>
+
+  <!-- 研修写真が無いため理念写真を活かして構成 -->
+
+  <!-- ご依頼の流れ -->
+  <h3 class="section-title">ご依頼の流れ</h3>
+  <div class="section-underline"></div>
+
+  <p class="text">
+    初めての方も安心してご依頼いただけるよう、わかりやすいステップでご案内します。
+  </p>
+
+  <div class="image-block">
+    <img src="IMG_8620.jpeg" alt="ご依頼の流れ">
+  </div>
+
+</div>
 
 </body>
 </html>
