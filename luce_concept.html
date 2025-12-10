@@ -21,6 +21,41 @@ body {
   padding-bottom: 60px;
 }
 
+/* HEADER */
+.header {
+  background: #fff;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid #e8f3ef;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header img {
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #1f5e4e;
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.nav a:hover {
+  background: #dff4ec;
+}
+
 /* ページコンテナ */
 .container {
   max-width: 900px;
@@ -82,6 +117,20 @@ body {
 
 <body>
 
+<!-- HEADER -->
+<header class="header">
+  <img src="22881554-1D14-4B53-9564-FB3A4DC5D36C.png" alt="Luce ロゴ">
+  <nav class="nav">
+    <a href="index.html">ホーム</a>
+    <a href="service.html">サービス</a>
+    <a href="price.html">料金</a>
+    <a href="luce_concept.html">会社理念</a>
+    <a href="about.html">会社概要</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
 <div class="container">
 
   <!-- 会社理念 -->
@@ -96,14 +145,14 @@ body {
   <p class="text">
     そして私たちは、一人ひとりが “自由と自律” を持って行動できる会社であることを重視します。<br>
     自由とは、ただ好きなように動くことではありません。自分で考え、自分で選び、その結果に責任を持つこと。<br>
-    その自由が、仕事の質を高め、社員の成長を促し、会社の未来を切り開く力になると信じています。
+    その自由が仕事の質を高め、社員の成長を促し、会社の未来を切り開く力になると信じています。
   </p>
 
   <p class="text">
     私たちは清掃のプロとして、誠実さ・安全・品質・自由・成長を軸に、地域社会に安心と価値を提供し続けます。
   </p>
 
-  <!-- 理念イメージ画像（IMG_8618） -->
+  <!-- 理念イメージ -->
   <div class="image-block">
     <img src="IMG_8618.jpeg" alt="理念イメージ">
   </div>
@@ -121,7 +170,7 @@ body {
     <img src="IMG_8619.jpeg" alt="サービス品質イメージ">
   </div>
 
-  <!-- 研修・スタッフ品質 -->
+  <!-- スタッフ品質 -->
   <h3 class="section-title">スタッフ品質</h3>
   <div class="section-underline"></div>
 
@@ -130,14 +179,12 @@ body {
     安心して任せられる “誠実な清掃のプロ” を育成しています。
   </p>
 
-  <!-- 研修写真が無いため理念写真を活かして構成 -->
-
   <!-- ご依頼の流れ -->
   <h3 class="section-title">ご依頼の流れ</h3>
   <div class="section-underline"></div>
 
   <p class="text">
-    初めての方も安心してご依頼いただけるよう、わかりやすいステップでご案内します。
+    初めての方でも安心してご依頼いただけるよう、わかりやすいステップでご案内します。
   </p>
 
   <div class="image-block">
