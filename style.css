@@ -1,302 +1,161 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================
+style.css 完全版
+========================= */
+
+body{
+    margin:0;
+    font-family:'Helvetica','Arial',sans-serif;
+    line-height:1.8;
+    color:#333;
+    background:#fff;
 }
 
-body {
-    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, -apple-system,
-        BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    color: #333;
-    line-height: 1.7;
-    background-color: #fff;
+/* ヘッダー */
+
+header{
+    border-bottom:1px solid #e5e5e5;
+    background:#fff;
 }
 
-/* =======================================
-   HEADER（ナビゲーション）
-======================================= */
-header {
-    width: 100%;
-    padding: 10px 16px;
-    background: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    display: flex;
-    align-items: center;
-    gap: 18px;
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-.logo {
-    height: 42px;
-    width: auto;
+.logo{
+    width:140px;
+    height:auto;
+    display:block;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+/* ナビ */
+
+nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    list-style:none;
+    margin:0;
+    padding:0;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    white-space: nowrap;
+nav a{
+    text-decoration:none;
+    color:#1d6f67;
+    font-size:17px;
+    font-weight:600;
+    transition:0.3s;
 }
 
-nav a:hover {
-    color: #00a3a5;
+nav a:hover{
+    color:#00a3a5;
+}
+
+/* 共通 */
+
+.page-container{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.page-title{
+    font-size:52px;
+    color:#155e56;
+    margin-bottom:50px;
+    position:relative;
+}
+
+.page-title::after{
+    content:"";
+    display:block;
+    width:120px;
+    height:5px;
+    background:#42d3c8;
+    margin-top:15px;
+    border-radius:10px;
+}
+
+/* テーブル */
+
+.company-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+}
+
+.company-table th,
+.company-table td{
+    border:1px solid #e5e5e5;
+    padding:18px;
+    text-align:left;
+}
+
+.company-table th{
+    width:220px;
+    background:#f7f7f7;
+}
+
+/* お問い合わせ */
+
+.contact-box{
+    margin-top:40px;
+    padding:30px;
+    border-radius:12px;
+    background:#f8fbfb;
+    border:1px solid #e3f0ef;
+}
+
+.contact-text{
+    font-size:18px;
+}
+
+/* 理念 */
+
+.concept-box{
+    font-size:20px;
+    line-height:2.2;
+}
+
+/* フッター */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #e5e5e5;
+    color:#777;
+    margin-top:60px;
 }
 
 /* スマホ */
-@media (max-width: 600px) {
-    header {
-        flex-wrap: wrap;
+
+@media(max-width:768px){
+
+    .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
     }
-}
 
-/* =======================================
-   HERO（トップページだけ）
-======================================= */
-.hero {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-/* ★ hero-img を完全にトップページ専用にする！ */
-.hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ★ hero 以外のページには画像を絶対出さない */
-.hero + img,
-section img.logo-background {
-    display: none !important;
-}
-
-.hero-title {
-    position: absolute;
-    bottom: 20px;
-    left: 16px;
-    right: 16px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-}
-
-@media (max-width: 600px) {
-    .hero-title {
-        font-size: 18px;
+    nav ul{
+        gap:18px;
     }
-}
 
-/* =======================================
-   共通コンテンツ
-======================================= */
-.page-container {
-    max-width: 1000px;
-    margin: 32px auto;
-    padding: 0 16px;
-}
-
-h1, h2 {
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-    position: relative;
-}
-
-h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #00b1b3, #7ed4ff);
-    border-radius: 5px;
-}
-
-h3 {
-    font-size: 18px;
-    margin: 18px 0 8px;
-}
-
-ul {
-    margin-left: 20px;
-}
-
-/* =======================================
-   テーブル（料金表）
-======================================= */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-table th,
-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background: #e9f9f9;
-    color: #008b8d;
-    font-weight: 600;
-}
-
-/* スマホ：カード式 */
-@media (max-width: 600px) {
-    table thead {
-        display: none;
+    .logo{
+        width:100px;
     }
-    table tr {
-        display: block;
-        margin-bottom: 12px;
-        border: 1px solid #ccc;
-        padding: 10px;
+
+    .page-title{
+        font-size:40px;
     }
-    table td {
-        display: flex;
-        padding: 6px 0;
+
+    .company-table th{
+        width:120px;
     }
-    table td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        width: 110px;
-        color: #008b8d;
-    }
-}
 
-/* =======================================
-   MAP（会社概要の地図）
-======================================= */
-.map-wrap iframe {
-    width: 100%;
-    height: 300px;
-    border: 0;
-}
-
-/* =======================================
-   FOOTER
-======================================= */
-footer {
-    text-align: center;
-    padding: 14px;
-    background: #f5f5f5;
-    margin-top: 40px;
-    font-size: 13px;
-    color: #666;
-}
-/* サービス写真の共通スタイル */
-.service-photo {
-    width: 100%;
-    height: auto;
-    max-height: 320px;    /* ← 画像の最大高さを制限（好みで調整OK） */
-    object-fit: cover;    /* ← トリミングしながら綺麗にフィット */
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-/* スマホ時はさらに少し小さく */
-@media (max-width: 600px) {
-    .service-photo {
-        max-height: 240px;  /* ← スマホ用にさらに小さく */
-    }
-}
-/* ============================
-   ① セクションの下に薄い緑ライン
-============================ */
-section {
-    border-bottom: 1px solid #e0f5f2; /* 薄い緑ライン */
-    padding-bottom: 32px;
-    margin-bottom: 32px;
-}
-
-/* ============================
-   ② h1・h2 の左へアクセント緑バー
-============================ */
-h1, h2 {
-    position: relative;
-    padding-left: 12px;
-}
-
-h1::before, h2::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #00b1b3;
-    border-radius: 4px;
-}
-
-/* ============================
-   ③ h3 の下に薄い緑ライン
-============================ */
-h3 {
-    position: relative;
-    padding-bottom: 6px;
-}
-
-h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
-    height: 2px;
-    background: #c9f1ec;
-    border-radius: 4px;
-}
-
-/* ============================
-   ④ CTAやボックス風の背景に使える
-      → HTMLを変えず「見た目だけ」優しくする
-============================ */
-div[style*="background:#e9f8f7"] {
-    background: linear-gradient(135deg, #e9f8f7, #f6fffe) !important;
-    border-left: 6px solid #00b1b3 !important;
-    border-radius: 10px !important;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
-
-/* ============================
-   ⑤ ボタンのデザインを自動強化
-      → HTMLの a タグが青緑ボタン風になる
-============================ */
-a[href*="contact"] {
-    background: #00a3a5;
-    color: #fff !important;
-    padding: 12px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: 0.25s;
-}
-
-a[href*="contact"]:hover {
-    background: #009295;
-    transform: translateY(-2px);
-}
-header a[href*="contact"] {
-    background: none !important;
-    color: #333 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    transform: none !important;
 }
