@@ -1,32 +1,30 @@
+ホームは index.html に昔のレイアウトコードが残ってる。
+今の状態は、
+
+* 古い inline style
+* 古い flex
+* 古い hero
+* CSS競合
+
+が混ざってるから崩れてる。
+
+これを index.html に丸ごと全張り替えして。
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>合同会社Luce｜大阪のマンション清掃・日常清掃</title>
-
-<meta name="description" content="合同会社Luceは大阪市を中心にマンション清掃・共用部清掃・日常清掃を行う清掃会社です。">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合同会社Luce｜大阪のマンション清掃・日常清掃</title>
+    <meta name="description" content="大阪市を中心にマンション清掃・共用部清掃・日常清掃を行う合同会社Luce。">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<!-- =========================
-HEADER
-========================= -->
-
 <header>
-
     <div class="header-inner">
-
-        <!-- ロゴ -->
-        <a href="index.html" class="logo-link">
-            <img src="luce-logo.png" class="logo" alt="合同会社Luceロゴ">
+        <a href="index.html">
+            <img src="luce-logo.png" class="logo" alt="合同会社Luce ロゴ">
         </a>
-
-        <!-- MENU -->
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
@@ -38,150 +36,88 @@ HEADER
                 <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
         </nav>
-
     </div>
-
 </header>
-
-<!-- =========================
-HERO
-========================= -->
-
+<!-- HERO -->
 <section class="hero">
-
-    <img src="IMG_8573.jpeg" class="hero-img" alt="大阪のマンション清掃">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-text">
-
+    <img src="IMG_8573.jpeg"
+         class="hero-image"
+         alt="合同会社Luce">
+    <div class="hero-overlay">
         <h1>
-            大阪のマンション清掃・日常清掃なら<br>
-            合同会社Luceへ
+            大阪のマンション清掃・<br>
+            日常清掃なら合同会社Luceへ
         </h1>
-
         <p>
             マンション清掃・共用部清掃・巡回清掃まで対応
         </p>
-
     </div>
-
 </section>
-
-<!-- =========================
-MAIN
-========================= -->
-
-<main class="page-container">
-
-    <!-- ABOUT -->
-
-    <section class="top-about">
-
+<!-- MAIN -->
+<div class="page-container">
+    <section class="top-intro">
         <h2>
             マンション・共用部清掃を<br>
             高品質で丁寧に
         </h2>
-
         <p>
             合同会社Luce（ルーチェ）は、
-            大阪市を中心にマンション清掃・共用部清掃・日常清掃を行う清掃会社です。
+            大阪市を中心にマンション清掃・
+            共用部清掃・日常清掃を行う
+            清掃会社です。
         </p>
-
         <p>
-            エントランス・廊下・階段・エレベーターホール・ゴミ置き場など、
-            建物の美観維持を目的とした清掃を丁寧に行います。
+            エントランス・廊下・階段・
+            エレベーターホール・ゴミ置き場など、
+            建物の美観維持を目的とした
+            清掃を丁寧に行います。
         </p>
-
         <p>
             「見えない部分こそ丁寧に」をモットーに、
-            建物の価値を守る高品質な清掃サービスをご提供しております。
+            建物の価値を守る高品質な清掃サービスを
+            ご提供しております。
         </p>
-
     </section>
-
-    <!-- REASON -->
-
+    <!-- 選ばれる理由 -->
     <section class="reason-section">
-
         <h2>選ばれる理由</h2>
-
         <div class="reason-grid">
-
-            <div class="reason-box">
+            <div class="reason-card">
                 <h3>専門スタッフが対応</h3>
-
                 <p>
                     マンション・共用部清掃専門スタッフが、
                     建物に合わせた最適な清掃を行います。
                 </p>
             </div>
-
-            <div class="reason-box">
+            <div class="reason-card">
                 <h3>大阪市内迅速対応</h3>
-
                 <p>
                     大阪エリア中心だからこそ、
                     スピーディーな対応が可能です。
                 </p>
             </div>
-
-            <div class="reason-box">
+            <div class="reason-card">
                 <h3>柔軟な清掃プラン</h3>
-
                 <p>
                     週1回〜毎日清掃まで、
                     物件に応じた最適なプランをご提案します。
                 </p>
             </div>
-
         </div>
-
     </section>
-
-    <!-- AREA -->
-
-    <section class="area-section">
-
-        <h2>対応エリア</h2>
-
-        <p>
-            大阪市全域対応<br>
-            北区・中央区・淀川区・東淀川区・天王寺区 他
-        </p>
-
-    </section>
-
     <!-- CTA -->
-
     <section class="cta-section">
-
         <h2>お問い合わせ・お見積り無料</h2>
-
         <p>
-            マンション清掃・日常清掃について
-            お気軽にご相談ください。
+            清掃に関するご相談はお気軽にお問い合わせください。
         </p>
-
-        <a href="contact.html" class="cta-btn">
+        <a href="contact.html" class="cta-button">
             お問い合わせはこちら
         </a>
-
     </section>
-
-</main>
-
-<!-- =========================
-FOOTER
-========================= -->
-
+</div>
 <footer>
-
-    <p>
-        © 2025 合同会社Luce
-    </p>
-
+    © 2025 合同会社Luce
 </footer>
-
 </body>
 </html>
