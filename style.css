@@ -18,10 +18,11 @@ body{
     "Yu Gothic",
     sans-serif;
 
-    background:#f7f9f9;
+    background:#f7f9fa;
     color:#222;
     line-height:1.9;
 }
+
 
 /* ========================================
    HEADER
@@ -29,7 +30,7 @@ body{
 
 header{
     width:100%;
-    background:#ffffff;
+    background:#fff;
     border-bottom:1px solid #e5e5e5;
     position:sticky;
     top:0;
@@ -38,40 +39,54 @@ header{
 
 .header-inner{
     max-width:1200px;
-    margin:0 auto;
+    margin:auto;
+    padding:14px 20px;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    padding:18px 24px;
+    gap:20px;
 }
 
+
+/* ========================================
+   LOGO
+======================================== */
+
 .logo{
-    width:120px;
+    width:130px;
     height:auto;
     display:block;
 }
 
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
 nav ul{
-    display:flex;
-    gap:28px;
     list-style:none;
+
+    display:flex;
     flex-wrap:wrap;
+    gap:28px;
+
+    align-items:center;
     justify-content:flex-end;
 }
 
 nav a{
     text-decoration:none;
     color:#155e63;
-    font-size:15px;
     font-weight:700;
+    font-size:15px;
     transition:.3s;
 }
 
 nav a:hover{
-    color:#00a3a5;
+    color:#20b8bc;
 }
+
 
 /* ========================================
    HERO
@@ -84,7 +99,7 @@ nav a:hover{
     overflow:hidden;
 }
 
-.hero-image{
+.hero-img{
     width:100%;
     height:100%;
     object-fit:cover;
@@ -95,42 +110,28 @@ nav a:hover{
     content:"";
     position:absolute;
     inset:0;
-
-    background:
-    linear-gradient(
-        to top,
-        rgba(0,0,0,.65),
-        rgba(0,0,0,.15)
-    );
+    background:rgba(0,0,0,.35);
 }
 
-.hero-overlay{
+.hero-title{
     position:absolute;
+    z-index:2;
+
     left:50%;
-    bottom:60px;
-
-    transform:translateX(-50%);
-
-    width:90%;
-    max-width:1200px;
+    top:50%;
+    transform:translate(-50%,-50%);
 
     color:#fff;
-    z-index:2;
+    text-align:center;
+
+    width:90%;
+    max-width:900px;
+
+    font-size:42px;
+    line-height:1.5;
+    font-weight:700;
 }
 
-.hero-overlay h1{
-    font-size:48px;
-    line-height:1.4;
-    margin-bottom:14px;
-    font-weight:800;
-
-    text-shadow:0 4px 12px rgba(0,0,0,.4);
-}
-
-.hero-overlay p{
-    font-size:18px;
-    text-shadow:0 3px 10px rgba(0,0,0,.4);
-}
 
 /* ========================================
    PAGE HERO
@@ -140,186 +141,222 @@ nav a:hover{
     background:
     linear-gradient(
         135deg,
-        #f7ffff,
-        #edf7f7
+        #155e63,
+        #20b8bc
     );
 
-    padding:110px 20px 80px;
+    color:#fff;
+    padding:90px 20px;
 }
 
 .page-hero-inner{
-    max-width:1100px;
-    margin:0 auto;
+    max-width:1000px;
+    margin:auto;
 }
 
 .page-hero h1{
-    font-size:48px;
-    color:#155e63;
+    font-size:46px;
     margin-bottom:20px;
 }
 
 .page-hero p{
     font-size:18px;
-    color:#444;
-    max-width:700px;
+    line-height:2;
 }
+
 
 /* ========================================
    CONTAINER
 ======================================== */
 
 .page-container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:80px 24px;
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
 }
+
 
 /* ========================================
    TITLES
 ======================================== */
 
+h1{
+    font-size:44px;
+    line-height:1.4;
+    margin-bottom:30px;
+}
+
 h2{
     font-size:36px;
-    color:#155e63;
-    margin-bottom:28px;
-    line-height:1.5;
+    line-height:1.6;
+    margin-bottom:24px;
+    color:#111;
 }
 
 h3{
-    font-size:24px;
-    margin-bottom:18px;
+    font-size:28px;
+    margin-bottom:20px;
     color:#155e63;
 }
 
+h4{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
+
 p{
-    margin-bottom:20px;
+    margin-bottom:24px;
+    font-size:17px;
+    line-height:2;
 }
+
 
 /* ========================================
-   TOP INTRO
+   SERVICE IMAGE
 ======================================== */
 
-.top-intro{
-    margin-bottom:80px;
-}
+.service-photo{
+    width:100%;
+    max-width:900px;
 
-/* ========================================
-   REASON
-======================================== */
+    height:420px;
 
-.reason-section{
-    margin-top:80px;
-}
-
-.reason-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-    margin-top:32px;
-}
-
-.reason-card{
-    background:#fff;
-    border-radius:16px;
-    padding:30px;
-    box-shadow:0 10px 25px rgba(0,0,0,.06);
-}
-
-.reason-card h3{
-    margin-bottom:14px;
-}
-
-/* ========================================
-   SERVICE
-======================================== */
-
-.service-block{
-    display:flex;
-    align-items:center;
-    gap:50px;
-    margin-bottom:100px;
-}
-
-.service-block.reverse{
-    flex-direction:row-reverse;
-}
-
-.service-img{
-    width:50%;
-    border-radius:18px;
     object-fit:cover;
 
+    display:block;
+
+    margin:50px auto 25px;
+
+    border-radius:18px;
+
     box-shadow:
-    0 12px 30px rgba(0,0,0,.08);
+    0 10px 35px rgba(0,0,0,.10);
 }
 
-.service-content{
-    flex:1;
-}
-
-.service-content h2{
-    margin-bottom:20px;
-}
 
 /* ========================================
-   PRICE
+   CARD
+======================================== */
+
+.card-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:24px;
+
+    margin-top:30px;
+}
+
+.card{
+    background:#fff;
+    padding:28px;
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.05);
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+
+/* ========================================
+   PRICE TABLE
 ======================================== */
 
 .price-table-wrap{
     overflow-x:auto;
+    margin-top:40px;
 }
 
 .price-table{
     width:100%;
     border-collapse:collapse;
+
     background:#fff;
 
-    border-radius:16px;
+    border-radius:20px;
     overflow:hidden;
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,.05);
+    0 12px 35px rgba(0,0,0,.07);
 }
 
 .price-table th{
     background:#155e63;
     color:#fff;
-    padding:18px;
+
+    padding:22px;
+
+    font-size:18px;
     text-align:left;
 }
 
 .price-table td{
-    padding:18px;
-    border-bottom:1px solid #eee;
+    padding:22px;
+    border-bottom:1px solid #ececec;
+
+    font-size:16px;
+    line-height:1.9;
 }
 
-.price-note{
-    margin-top:60px;
+.price-table tr:last-child td{
+    border-bottom:none;
 }
+
+
+/* ========================================
+   PRICE NOTE
+======================================== */
+
+.price-note{
+    margin-top:40px;
+
+    background:#fff;
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.05);
+}
+
 
 /* ========================================
    CTA
 ======================================== */
 
 .cta-section{
-    margin-top:90px;
+    margin-top:60px;
 
     background:
     linear-gradient(
         135deg,
         #155e63,
-        #00a3a5
+        #20b8bc
     );
 
-    padding:60px 40px;
+    color:#fff;
+
+    padding:50px 30px;
     border-radius:24px;
 
-    color:#fff;
     text-align:center;
 }
 
 .cta-section h2{
     color:#fff;
+    margin-bottom:18px;
 }
 
 .cta-button{
@@ -330,12 +367,12 @@ p{
     background:#fff;
     color:#155e63;
 
-    padding:14px 34px;
+    padding:16px 34px;
 
     border-radius:999px;
 
     text-decoration:none;
-    font-weight:bold;
+    font-weight:700;
 
     transition:.3s;
 }
@@ -344,65 +381,98 @@ p{
     transform:translateY(-3px);
 }
 
+
+/* ========================================
+   COMPANY CONCEPT
+======================================== */
+
+.concept-box{
+    background:#fff;
+
+    padding:45px;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.06);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.concept-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    background:
+    radial-gradient(
+        rgba(32,184,188,.15),
+        transparent
+    );
+
+    top:-80px;
+    right:-80px;
+
+    border-radius:50%;
+}
+
+
 /* ========================================
    CONTACT
 ======================================== */
 
 .contact-box{
     background:#fff;
+
     padding:40px;
-    border-radius:18px;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.05);
-}
-
-/* ========================================
-   CONCEPT
-======================================== */
-
-.concept-section{
-    background:#fff;
-    padding:50px;
     border-radius:24px;
 
     box-shadow:
-    0 10px 35px rgba(0,0,0,.05);
+    0 10px 30px rgba(0,0,0,.06);
 }
+
 
 /* ========================================
    FOOTER
 ======================================== */
 
 footer{
-    margin-top:100px;
     background:#155e63;
     color:#fff;
 
     text-align:center;
 
     padding:30px 20px;
+
+    margin-top:80px;
+
+    font-size:14px;
 }
+
 
 /* ========================================
    MOBILE
 ======================================== */
 
-@media screen and (max-width:768px){
+@media(max-width:768px){
 
     .header-inner{
         flex-direction:column;
-        gap:20px;
-        padding:18px;
+        align-items:flex-start;
     }
 
     .logo{
-        width:90px;
+        width:95px;
     }
 
     nav ul{
-        justify-content:center;
-        gap:16px;
+        gap:14px;
     }
 
     nav a{
@@ -410,56 +480,52 @@ footer{
     }
 
     .hero{
-        height:320px;
+        height:340px;
     }
 
-    .hero-overlay{
-        bottom:25px;
-    }
-
-    .hero-overlay h1{
+    .hero-title{
         font-size:28px;
-    }
-
-    .hero-overlay p{
-        font-size:14px;
+        line-height:1.6;
     }
 
     .page-hero{
-        padding:70px 20px 50px;
+        padding:70px 20px;
     }
 
     .page-hero h1{
         font-size:34px;
     }
 
-    .page-container{
-        padding:50px 18px;
+    h1{
+        font-size:34px;
     }
 
     h2{
         font-size:28px;
     }
 
-    .reason-grid{
-        grid-template-columns:1fr;
+    h3{
+        font-size:24px;
     }
 
-    .service-block,
-    .service-block.reverse{
-        flex-direction:column;
+    p{
+        font-size:15px;
     }
 
-    .service-img{
-        width:100%;
+    .service-photo{
+        height:240px;
+        border-radius:14px;
     }
 
-    .cta-section{
-        padding:40px 24px;
+    .price-table th,
+    .price-table td{
+        padding:14px;
+        font-size:14px;
     }
 
+    .concept-box,
     .contact-box,
-    .concept-section{
+    .price-note{
         padding:28px;
     }
 
