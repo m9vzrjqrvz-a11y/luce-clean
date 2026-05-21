@@ -1,23 +1,215 @@
-<!-- =========================
-luce_concept.html（修正版 完全版）
-========================= -->
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>会社理念｜合同会社Luce</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Helvetica','Arial',sans-serif;
+    color:#333;
+    background:
+    linear-gradient(
+        135deg,
+        #f7fffd 0%,
+        #eef9f7 40%,
+        #ffffff 100%
+    );
+}
+
+/* =========================
+HEADER
+========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e7efee;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    width:140px;
+    height:auto;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    margin:0;
+    padding:0;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1b6c65;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00a3a5;
+}
+
+/* =========================
+MAIN
+========================= */
+
+.concept-section{
+    max-width:1100px;
+    margin:auto;
+    padding:90px 20px;
+    position:relative;
+}
+
+/* 背景ロゴ */
+
+.bg-logo{
+    position:absolute;
+    right:-80px;
+    top:100px;
+    width:500px;
+    opacity:0.05;
+    pointer-events:none;
+}
+
+/* タイトル */
+
+.page-title{
+    font-size:60px;
+    color:#145e57;
+    margin-bottom:70px;
+    position:relative;
+    font-weight:700;
+}
+
+.page-title::after{
+    content:"";
+    display:block;
+    width:140px;
+    height:6px;
+    background:linear-gradient(
+        90deg,
+        #00cfc8,
+        #78e6d8
+    );
+    border-radius:10px;
+    margin-top:18px;
+}
+
+/* ガラス風 */
+
+.concept-card{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.5);
+
+    border-radius:24px;
+
+    padding:50px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.05);
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* 左上アクセント */
+
+.concept-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:8px;
+
+    background:linear-gradient(
+        90deg,
+        #00cfc8,
+        #1b6c65
+    );
+}
+
+/* 文章 */
+
+.concept-card p{
+    font-size:22px;
+    line-height:2.2;
+    margin-bottom:40px;
+    color:#333;
+}
+
+/* フッター */
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#777;
+    border-top:1px solid #e5e5e5;
+    background:#fff;
+}
+
+/* =========================
+SP
+========================= */
+
+@media(max-width:768px){
+
+    .page-title{
+        font-size:42px;
+    }
+
+    .concept-card{
+        padding:30px;
+    }
+
+    .concept-card p{
+        font-size:18px;
+        line-height:2;
+    }
+
+    .bg-logo{
+        width:280px;
+        right:-80px;
+        top:180px;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
+
     <div class="header-inner">
 
         <a href="index.html">
-            <img src="luce-logo.png" alt="合同会社Luceロゴ" class="logo">
+            <img src="luce-logo.png" class="logo" alt="合同会社Luce">
         </a>
 
         <nav>
@@ -33,45 +225,53 @@ luce_concept.html（修正版 完全版）
         </nav>
 
     </div>
+
 </header>
 
-<section class="sub-page">
+<section class="concept-section">
 
-    <div class="page-container">
+    <!-- 背景ロゴ -->
+    <img src="luce-logo.png" class="bg-logo" alt="">
 
-        <h1 class="page-title">会社理念</h1>
+    <h1 class="page-title">
+        会社理念
+    </h1>
 
-        <div class="concept-box">
+    <div class="concept-card">
 
-            <p>
-                私たちは、清潔で安全な環境を整え、
-                人々の暮らしと事業を支えることを使命とします。
-            </p>
+        <p>
+            私たちは、清潔で安全な環境を整え、
+            人々の暮らしと事業を支えることを使命とします。
+            地域で最も信頼される清掃会社であるために、
+            誠実な仕事、安全の徹底、品質へのこだわりを大切にします。
+        </p>
 
-            <p>
-                地域で最も信頼される清掃会社であるために、
-                誠実な仕事、安全の徹底、品質へのこだわりを大切にします。
-            </p>
+        <p>
+            そして私たちは、
+            一人ひとりが“自由と自律”を持って
+            行動できる会社であることを重視します。
+        </p>
 
-            <p>
-                そして私たちは、
-                一人ひとりが“自由と自律”を持って行動できる会社であることを重視します。
-            </p>
+        <p>
+            自由とは、
+            ただ好きなように動くことではありません。
+            自分で考え、自分で選び、
+            その結果に責任を持つこと。
+        </p>
 
-            <p>
-                自由とは、ただ好きなように動くことではありません。
-                自分で考え、自分で選び、その結果に責任を持つこと。
-                その自由が、仕事の質を高め、社員の成長を促し、
-                会社の未来を切り開く力になると信じています。
-            </p>
+        <p>
+            その自由が、
+            仕事の質を高め、
+            社員の成長を促し、
+            会社の未来を切り開く力になると
+            信じています。
+        </p>
 
-            <p>
-                私たちは清掃のプロとして、
-                誠実さ・安全・品質・自由・成長を軸に、
-                地域社会に安心と価値を提供し続けます。
-            </p>
-
-        </div>
+        <p>
+            私たちは清掃のプロとして、
+            誠実さ・安全・品質・自由・成長を軸に、
+            地域社会に安心と価値を提供し続けます。
+        </p>
 
     </div>
 
