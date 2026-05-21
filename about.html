@@ -1,75 +1,353 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会社概要｜大阪のマンション清掃・日常清掃なら合同会社Luce</title>
-    <meta name="description" content="合同会社Luceの会社概要。大阪市下寺を拠点に、マンション清掃・共用部清掃・日常清掃・商業施設・ホテル清掃を行う清掃会社です。代表者や所在地、設立日などの情報をご紹介します。">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<header>
-    <img src="22881554-1D14-4B53-9564-FB3A4DC5D36C.png" class="logo" alt="合同会社Luce ロゴ">
+/* =========================
+   BODY
+========================= */
+body{
+    font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
 
-    <nav>
-        <a href="index.html">ホーム</a>
-        <a href="service.html">サービス</a>
-        <a href="price.html">料金</a>
-        <a href="luce_concept.html">会社理念</a>
-        <a href="about.html">会社概要</a>
-        <a href="recruit.html">採用情報</a>
-        <a href="contact.html">お問い合わせ</a>
-    </nav>
-</header>
+    color:#333;
+    line-height:1.9;
+    background:#fff;
+}
 
-<section>
-    <h1>会社概要</h1>
+/* =========================
+   HEADER
+========================= */
+header{
+    width:100%;
+    background:#fff;
+    border-bottom:1px solid #e5e5e5;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
 
-    <h3>会社名</h3>
-    <p>合同会社Luce（ルーチェ）</p>
+.header-inner{
+    max-width:1200px;
+    margin:auto;
 
-    <h3>代表者</h3>
-    <p>代表社員　衣笠 愛香</p>
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-    <h3>所在地</h3>
-    <p>大阪府大阪市下寺3-10-15</p>
+    padding:18px 24px;
+}
 
-    <div class="map-wrap">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.226226624358!2d135.50840207645753!3d34.664660872937095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e72d89bdc28f%3A0x4e95135406fc5744!2z44CSNTQyLTAwNzMg5aSn6Ziq5bqc5aSn5a2m5Yy66Z2S5bCP77yT5LiB55uu77yR77yT4oiS77yXIOW6lyAxMC0xMQ!5e0!3m2!1sja!2sjp!4v1733400000000!5m2!1sja!2sjp" 
-            width="100%" height="350" style="border:0;" allowfullscreen loading="lazy">
-        </iframe>
-    </div>
+/* LOGO */
+.logo{
+    width:90px;
+    height:auto;
+    display:block;
+}
 
-    <h3>電話番号</h3>
-    <p>06-6978-8089</p>
+/* NAV */
+nav ul{
+    display:flex;
+    gap:34px;
+    list-style:none;
+    flex-wrap:wrap;
+}
 
-    <h3>営業時間</h3>
-    <p>10:00〜17:00</p>
+nav a{
+    text-decoration:none;
+    color:#1f6d63;
+    font-weight:700;
+    font-size:17px;
+    transition:0.3s;
+}
 
-    <h3>事業内容</h3>
-    <ul>
-        <li>マンション清掃・共用部清掃</li>
-        <li>オフィス・店舗等の日常清掃</li>
-        <li>商業施設・病院清掃</li>
-        <li>ホテル客室清掃</li>
-        <li>ビルメンテナンス業務全般</li>
-    </ul>
+nav a:hover{
+    color:#43c6ac;
+}
 
-    <h3>設立</h3>
-    <p>令和7年9月30日（2025年9月30日）</p>
+/* =========================
+   HERO
+========================= */
+.hero{
+    position:relative;
+    width:100%;
+    height:560px;
+    overflow:hidden;
+}
 
-    <h3>従業員数</h3>
-    <p>9名</p>
+.hero-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
 
-    <h3>対応エリア</h3>
-    <p>大阪市を中心とした大阪府内および近郊エリア</p>
-</section>
+/* OVERLAY */
+.hero-overlay{
+    position:absolute;
+    inset:0;
 
-<footer>
-    © 2025 合同会社Luce
-</footer>
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.35)
+    );
+}
 
-</body>
-</html>
+/* HERO TEXT */
+.hero-text{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:90%;
+    max-width:900px;
+
+    color:#fff;
+    text-align:center;
+}
+
+.hero-text h1{
+    font-size:48px;
+    line-height:1.5;
+    margin-bottom:20px;
+    text-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hero-text p{
+    font-size:20px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   MAIN
+========================= */
+.page-container{
+    max-width:1100px;
+    margin:auto;
+    padding:80px 24px;
+}
+
+/* =========================
+   SECTION
+========================= */
+section{
+    margin-bottom:90px;
+}
+
+section h2{
+    font-size:40px;
+    color:#15594f;
+    margin-bottom:28px;
+    line-height:1.5;
+    position:relative;
+}
+
+section h2::after{
+    content:"";
+    width:80px;
+    height:5px;
+    background:#43c6ac;
+
+    display:block;
+    margin-top:16px;
+    border-radius:20px;
+}
+
+section p{
+    font-size:18px;
+    line-height:2.1;
+    margin-bottom:18px;
+}
+
+/* =========================
+   REASON BOX
+========================= */
+.reason-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.reason-box{
+    border:1px solid #e5e5e5;
+    border-radius:14px;
+    padding:28px;
+    background:#fff;
+
+    transition:0.3s;
+}
+
+.reason-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.reason-box h3{
+    color:#1f6d63;
+    font-size:22px;
+    margin-bottom:14px;
+}
+
+.reason-box p{
+    font-size:16px;
+    margin-bottom:0;
+}
+
+/* =========================
+   PRICE TABLE
+========================= */
+.price-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.price-table th{
+    background:#1f6d63;
+    color:#fff;
+    padding:18px;
+    font-size:17px;
+}
+
+.price-table td{
+    border:1px solid #ddd;
+    padding:18px;
+    font-size:16px;
+    background:#fff;
+}
+
+.price-table tr:nth-child(even){
+    background:#f8f8f8;
+}
+
+/* =========================
+   CTA
+========================= */
+.cta-section{
+    background:#eefaf7;
+    padding:50px;
+    border-radius:18px;
+    text-align:center;
+}
+
+.cta-btn{
+    display:inline-block;
+    margin-top:20px;
+
+    background:#1f6d63;
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:16px 38px;
+    border-radius:999px;
+
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.cta-btn:hover{
+    background:#43c6ac;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    border-top:1px solid #eee;
+    padding:28px;
+    text-align:center;
+    color:#777;
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:900px){
+
+    .header-inner{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    nav ul{
+        justify-content:center;
+        gap:18px;
+    }
+
+    .hero{
+        height:420px;
+    }
+
+    .hero-text h1{
+        font-size:30px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+    }
+
+    section h2{
+        font-size:32px;
+    }
+
+    .reason-grid{
+        grid-template-columns:1fr;
+    }
+
+    .page-container{
+        padding:60px 20px;
+    }
+
+    .price-table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .logo{
+        width:70px;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+
+    .hero{
+        height:340px;
+    }
+
+    .hero-text h1{
+        font-size:24px;
+    }
+
+    section h2{
+        font-size:28px;
+    }
+
+    section p{
+        font-size:16px;
+    }
+
+    .cta-section{
+        padding:35px 24px;
+    }
+
+}
