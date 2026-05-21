@@ -1,8 +1,6 @@
 /* ========================================
-   合同会社Luce - 完全版 style.css
+   RESET
 ======================================== */
-
-/* ===== リセット ===== */
 
 *{
     margin:0;
@@ -10,636 +8,459 @@
     box-sizing:border-box;
 }
 
-/* ===== 全体 ===== */
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-
     font-family:
-    'Helvetica Neue',
-    'Hiragino Sans',
-    'Yu Gothic',
+    "Hiragino Sans",
+    "Yu Gothic",
     sans-serif;
 
-    color:#333;
-
+    background:#f7f9f9;
+    color:#222;
     line-height:1.9;
+}
 
+/* ========================================
+   HEADER
+======================================== */
+
+header{
+    width:100%;
+    background:#ffffff;
+    border-bottom:1px solid #e5e5e5;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:0 auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 24px;
+}
+
+.logo{
+    width:120px;
+    height:auto;
+    display:block;
+}
+
+nav ul{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+nav a{
+    text-decoration:none;
+    color:#155e63;
+    font-size:15px;
+    font-weight:700;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00a3a5;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:520px;
+    overflow:hidden;
+}
+
+.hero-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.15)
+    );
+}
+
+.hero-overlay{
+    position:absolute;
+    left:50%;
+    bottom:60px;
+
+    transform:translateX(-50%);
+
+    width:90%;
+    max-width:1200px;
+
+    color:#fff;
+    z-index:2;
+}
+
+.hero-overlay h1{
+    font-size:48px;
+    line-height:1.4;
+    margin-bottom:14px;
+    font-weight:800;
+
+    text-shadow:0 4px 12px rgba(0,0,0,.4);
+}
+
+.hero-overlay p{
+    font-size:18px;
+    text-shadow:0 3px 10px rgba(0,0,0,.4);
+}
+
+/* ========================================
+   PAGE HERO
+======================================== */
+
+.page-hero{
     background:
     linear-gradient(
         135deg,
-        #f8fffd 0%,
-        #f2fbf9 50%,
-        #ffffff 100%
+        #f7ffff,
+        #edf7f7
     );
 
+    padding:110px 20px 80px;
 }
 
-/* ===== 共通 ===== */
+.page-hero-inner{
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.page-hero h1{
+    font-size:48px;
+    color:#155e63;
+    margin-bottom:20px;
+}
+
+.page-hero p{
+    font-size:18px;
+    color:#444;
+    max-width:700px;
+}
+
+/* ========================================
+   CONTAINER
+======================================== */
 
 .page-container{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    padding:
-    80px 20px;
-
-}
-
-/* ===== ヘッダー ===== */
-
-header{
-
-    background:#ffffffee;
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:
-    1px solid #e5efed;
-
-    position:sticky;
-
-    top:0;
-
-    z-index:999;
-
-}
-
-/* ヘッダー中 */
-
-.header-inner{
-
     max-width:1200px;
-
-    margin:auto;
-
-    padding:18px 20px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
+    margin:0 auto;
+    padding:80px 24px;
 }
 
-/* ===== ロゴ ===== */
-
-.logo{
-
-    width:140px;
-
-    height:auto;
-
-    display:block;
-
-}
-
-/* ===== ナビ ===== */
-
-nav ul{
-
-    list-style:none;
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:28px;
-
-    align-items:center;
-
-}
-
-/* リンク */
-
-nav a{
-
-    text-decoration:none;
-
-    color:#1a6c65;
-
-    font-size:17px;
-
-    font-weight:600;
-
-    transition:0.3s;
-
-    position:relative;
-
-}
-
-/* hover */
-
-nav a:hover{
-
-    color:#00a3a5;
-
-}
-
-/* 下線アニメ */
-
-nav a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-6px;
-
-    width:0%;
-
-    height:2px;
-
-    background:#00a3a5;
-
-    transition:0.3s;
-
-}
-
-nav a:hover::after{
-
-    width:100%;
-
-}
-
-/* ===== HERO ===== */
-
-.hero{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-/* TOP画像 */
-
-.hero-img{
-
-    width:100%;
-
-    height:72vh;
-
-    object-fit:cover;
-
-    display:block;
-
-    filter:brightness(0.88);
-
-}
-
-/* タイトル */
-
-.hero-title{
-
-    position:absolute;
-
-    left:50%;
-
-    top:50%;
-
-    transform:
-    translate(-50%,-50%);
-
-    color:#fff;
-
-    text-align:center;
-
-    font-size:58px;
-
-    line-height:1.5;
-
-    font-weight:700;
-
-    width:90%;
-
-    text-shadow:
-    0 6px 25px rgba(0,0,0,0.45);
-
-}
-
-/* ===== タイトル ===== */
-
-.page-title{
-
-    font-size:58px;
-
-    color:#155e56;
-
-    margin-bottom:60px;
-
-    position:relative;
-
-    font-weight:700;
-
-}
-
-/* アクセント */
-
-.page-title::after{
-
-    content:"";
-
-    display:block;
-
-    width:140px;
-
-    height:6px;
-
-    border-radius:10px;
-
-    margin-top:18px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #00cfc8,
-        #7be6db
-    );
-
-}
-
-/* ===== 見出し ===== */
+/* ========================================
+   TITLES
+======================================== */
 
 h2{
-
-    font-size:38px;
-
-    margin-bottom:25px;
-
-    color:#155e56;
-
+    font-size:36px;
+    color:#155e63;
+    margin-bottom:28px;
     line-height:1.5;
-
 }
 
 h3{
-
-    font-size:30px;
-
-    margin-bottom:20px;
-
-    color:#155e56;
-
+    font-size:24px;
+    margin-bottom:18px;
+    color:#155e63;
 }
-
-/* ===== 段落 ===== */
 
 p{
-
-    font-size:18px;
-
-    margin-bottom:24px;
-
-    color:#444;
-
+    margin-bottom:20px;
 }
 
-/* ===== カード ===== */
+/* ========================================
+   TOP INTRO
+======================================== */
 
-.card{
+.top-intro{
+    margin-bottom:80px;
+}
 
+/* ========================================
+   REASON
+======================================== */
+
+.reason-section{
+    margin-top:80px;
+}
+
+.reason-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:32px;
+}
+
+.reason-card{
     background:#fff;
-
-    border-radius:20px;
-
-    padding:35px;
-
-    box-shadow:
-    0 10px 35px rgba(0,0,0,0.05);
-
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
-/* ===== サービス画像 ===== */
-
-.service-img,
-.service-photo{
-
-    width:100%;
-
-    max-width:950px;
-
-    height:460px;
-
-    object-fit:cover;
-
-    display:block;
-
-    margin:
-    35px auto;
-
-    border-radius:22px;
-
-    box-shadow:
-    0 12px 40px rgba(0,0,0,0.10);
-
+.reason-card h3{
+    margin-bottom:14px;
 }
 
-/* ===== サービスブロック ===== */
+/* ========================================
+   SERVICE
+======================================== */
 
 .service-block{
-
-    margin-bottom:90px;
-
+    display:flex;
+    align-items:center;
+    gap:50px;
+    margin-bottom:100px;
 }
 
-/* ===== テーブル ===== */
+.service-block.reverse{
+    flex-direction:row-reverse;
+}
 
-.company-table{
+.service-img{
+    width:50%;
+    border-radius:18px;
+    object-fit:cover;
 
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.08);
+}
+
+.service-content{
+    flex:1;
+}
+
+.service-content h2{
+    margin-bottom:20px;
+}
+
+/* ========================================
+   PRICE
+======================================== */
+
+.price-table-wrap{
+    overflow-x:auto;
+}
+
+.price-table{
     width:100%;
-
     border-collapse:collapse;
-
-    margin-top:40px;
-
     background:#fff;
 
-    border-radius:18px;
-
+    border-radius:16px;
     overflow:hidden;
 
     box-shadow:
-    0 10px 35px rgba(0,0,0,0.05);
-
+    0 10px 30px rgba(0,0,0,.05);
 }
 
-/* セル */
-
-.company-table th,
-.company-table td{
-
-    border:
-    1px solid #edf2f1;
-
-    padding:22px;
-
+.price-table th{
+    background:#155e63;
+    color:#fff;
+    padding:18px;
     text-align:left;
-
-    font-size:17px;
-
 }
 
-/* 見出し */
-
-.company-table th{
-
-    width:240px;
-
-    background:#f6fbfa;
-
-    color:#155e56;
-
-    font-weight:700;
-
+.price-table td{
+    padding:18px;
+    border-bottom:1px solid #eee;
 }
 
-/* ===== 理念ページ ===== */
-
-.concept-box{
-
-    background:
-    rgba(255,255,255,0.75);
-
-    backdrop-filter:blur(10px);
-
-    border:
-    1px solid rgba(255,255,255,0.5);
-
-    border-radius:24px;
-
-    padding:55px;
-
-    box-shadow:
-    0 10px 40px rgba(0,0,0,0.05);
-
+.price-note{
+    margin-top:60px;
 }
 
-.concept-box p{
+/* ========================================
+   CTA
+======================================== */
 
-    font-size:22px;
-
-    line-height:2.2;
-
-    margin-bottom:38px;
-
-}
-
-/* ===== CTA ===== */
-
-.cta-box{
-
-    margin-top:70px;
+.cta-section{
+    margin-top:90px;
 
     background:
     linear-gradient(
         135deg,
-        #00cfc8,
-        #1d6f67
+        #155e63,
+        #00a3a5
     );
 
-    padding:45px;
-
+    padding:60px 40px;
     border-radius:24px;
 
     color:#fff;
-
     text-align:center;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,0.10);
-
 }
 
-.cta-box h3{
-
+.cta-section h2{
     color:#fff;
-
-    margin-bottom:18px;
-
 }
 
-/* ボタン */
-
-.btn{
-
+.cta-button{
     display:inline-block;
 
     margin-top:20px;
 
-    padding:
-    14px 34px;
-
     background:#fff;
+    color:#155e63;
 
-    color:#1b6c65;
-
-    text-decoration:none;
+    padding:14px 34px;
 
     border-radius:999px;
 
-    font-weight:700;
+    text-decoration:none;
+    font-weight:bold;
 
-    transition:0.3s;
-
+    transition:.3s;
 }
 
-.btn:hover{
-
-    transform:
-    translateY(-3px);
-
-}
-
-/* ===== フッター ===== */
-
-footer{
-
-    margin-top:100px;
-
-    padding:40px;
-
-    text-align:center;
-
-    color:#777;
-
-    border-top:
-    1px solid #e5efed;
-
-    background:#fff;
-
+.cta-button:hover{
+    transform:translateY(-3px);
 }
 
 /* ========================================
-   スマホ
+   CONTACT
 ======================================== */
 
-@media(max-width:768px){
+.contact-box{
+    background:#fff;
+    padding:40px;
+    border-radius:18px;
 
-    /* ロゴ */
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.05);
+}
 
-    .logo{
+/* ========================================
+   CONCEPT
+======================================== */
 
-        width:95px;
+.concept-section{
+    background:#fff;
+    padding:50px;
+    border-radius:24px;
 
-    }
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.05);
+}
 
-    /* ヘッダー */
+/* ========================================
+   FOOTER
+======================================== */
+
+footer{
+    margin-top:100px;
+    background:#155e63;
+    color:#fff;
+
+    text-align:center;
+
+    padding:30px 20px;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media screen and (max-width:768px){
 
     .header-inner{
-
         flex-direction:column;
-
-        align-items:flex-start;
-
+        gap:20px;
+        padding:18px;
     }
 
-    /* ナビ */
+    .logo{
+        width:90px;
+    }
 
     nav ul{
-
+        justify-content:center;
         gap:16px;
-
     }
 
     nav a{
-
-        font-size:15px;
-
+        font-size:14px;
     }
 
-    /* HERO */
-
-    .hero-img{
-
-        height:42vh;
-
+    .hero{
+        height:320px;
     }
 
-    .hero-title{
-
-        font-size:32px;
-
-        line-height:1.6;
-
+    .hero-overlay{
+        bottom:25px;
     }
 
-    /* タイトル */
+    .hero-overlay h1{
+        font-size:28px;
+    }
 
-    .page-title{
+    .hero-overlay p{
+        font-size:14px;
+    }
 
-        font-size:42px;
+    .page-hero{
+        padding:70px 20px 50px;
+    }
 
+    .page-hero h1{
+        font-size:34px;
+    }
+
+    .page-container{
+        padding:50px 18px;
     }
 
     h2{
-
         font-size:28px;
-
     }
 
-    h3{
-
-        font-size:24px;
-
+    .reason-grid{
+        grid-template-columns:1fr;
     }
 
-    p{
-
-        font-size:16px;
-
+    .service-block,
+    .service-block.reverse{
+        flex-direction:column;
     }
 
-    /* サービス画像 */
-
-    .service-img,
-    .service-photo{
-
-        height:240px;
-
-        border-radius:16px;
-
+    .service-img{
+        width:100%;
     }
 
-    /* 理念 */
-
-    .concept-box{
-
-        padding:30px;
-
+    .cta-section{
+        padding:40px 24px;
     }
 
-    .concept-box p{
-
-        font-size:18px;
-
-        line-height:2;
-
-    }
-
-    /* テーブル */
-
-    .company-table th,
-    .company-table td{
-
-        padding:14px;
-
-        font-size:14px;
-
-    }
-
-    .company-table th{
-
-        width:120px;
-
+    .contact-box,
+    .concept-section{
+        padding:28px;
     }
 
 }
